@@ -1,28 +1,28 @@
-import styled from "styled-components";
-
-const StyledHeroFrame = styled.div``;
-
-const StyledFigure = styled.figure``;
-
-const StyledImg = styled.img``;
-
-const StyledDescription = styled.div``;
+import {
+  StyledHeroFrame,
+  StyledFigure,
+  StyledImg,
+  StyledDescription,
+} from "./HeroFrame.styled";
 
 interface HeroFrame {
   imageUrl: string;
   description: string;
+  styles: {
+    width: string | number;
+    height: string | number;
+    top: string | number;
+    left: string | number;
+  };
 }
 
-export const HeroFrame = ({ imageUrl }: HeroFrame) => {
+export const HeroFrame = ({ imageUrl, styles }: HeroFrame) => {
   return (
-    <StyledHeroFrame>
+    <StyledHeroFrame className="hero_frame" {...styles}>
       <StyledFigure>
         <StyledImg src={imageUrl} />
+        <StyledDescription></StyledDescription>
       </StyledFigure>
-
-      <StyledDescription>
-        <span>&#11044;</span>
-      </StyledDescription>
     </StyledHeroFrame>
   );
 };
