@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   StyledHeroFrame,
   StyledFigure,
@@ -21,7 +22,7 @@ export const HeroFrame = ({ imageUrl, styles }: HeroFrame) => {
     <StyledHeroFrame className="hero_frame" {...styles}>
       <StyledFigure>
         <StyledImg src={imageUrl} />
-        <StyledDescription></StyledDescription>
+        <StyledDescription>{}</StyledDescription>
       </StyledFigure>
     </StyledHeroFrame>
   );

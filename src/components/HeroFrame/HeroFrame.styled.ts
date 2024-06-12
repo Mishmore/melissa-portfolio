@@ -7,12 +7,9 @@ interface StyledFigureProps {
   left: string | number;
 }
 
-export const StyledHeroFrame = styled.div.withConfig({
-  shouldForwardProp: (prop) => ![""].includes(prop),
-})<StyledFigureProps>`
+export const StyledHeroFrame = styled.div.withConfig({})<StyledFigureProps>`
   position: absolute;
   mix-blend-mode: multiply;
-  background-color: #c2948a;
 
   width: ${(props) => props.width};
   height: ${(props) => props.height};
