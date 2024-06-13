@@ -1,14 +1,14 @@
 import { useRef } from "react";
-
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
 
 import { Container } from "./components/Container/Container";
 import { StyledHero, StyledHeroWrapper } from "./components/Hero/Hero.styled";
-import { projects } from "./constants/projects";
 import { HeroFrame } from "./components/HeroFrame/HeroFrame";
+
+import { projects } from "./constants/projects";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, Draggable);
 

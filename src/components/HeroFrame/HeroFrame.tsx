@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 import {
   StyledHeroFrame,
   StyledFigure,
   StyledImg,
   StyledDescription,
+  StyledHeroFrameWrapper,
 } from "./HeroFrame.styled";
 
 interface HeroFrame {
@@ -17,13 +21,56 @@ interface HeroFrame {
   };
 }
 
+gsap.registerPlugin(useGSAP);
+
 export const HeroFrame = ({ imageUrl, styles }: HeroFrame) => {
+  const heroRef = useRef(null);
+  const { contextSafe } = useGSAP({ scope: heroRef });
+
+  const onMouseMove: MouseEventHandler = contextSafe((e) => {
+    const heroWrapper = document
+      .querySelector(".hero_wrapper")!
+      .getBoundingClientRect();
+    const x = e.clientX - heroWrapper.left;
+    const y = e.clientY - heroWrapper.top - 60;
+
+    gsap.to(".hero_description", {
+      x: x,
+      y: y,
+      duration: 1,
+      ease: "expoScale(0.5,7,none)",
+    });
+  });
+
+  const onMouseEnter = contextSafe(() => {
+    gsap.to(".hero_description", {
+      opacity: 1,
+      duration: 0.8,
+      ease: "power2.out",
+    });
+  });
+
+  const onMouseLeave = contextSafe(() => {
+    gsap.to(".hero_description", {
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.out",
+    });
+  });
+
   return (
-    <StyledHeroFrame className="hero_frame" {...styles}>
-      <StyledFigure>
-        <StyledImg src={imageUrl} />
-        <StyledDescription>{}</StyledDescription>
-      </StyledFigure>
-    </StyledHeroFrame>
+    <StyledHeroFrameWrapper
+      ref={heroRef}
+      onMouseMove={onMouseMove}
+      onMouseOver={onMouseEnter}
+      onMouseOut={onMouseLeave}
+    >
+      <StyledHeroFrame className="hero_frame" {...styles}>
+        <StyledFigure>
+          <StyledImg src={imageUrl} />
+        </StyledFigure>
+      </StyledHeroFrame>
+      <StyledDescription className="hero_description">Text</StyledDescription>
+    </StyledHeroFrameWrapper>
   );
 };
