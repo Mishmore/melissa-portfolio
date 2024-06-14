@@ -4,15 +4,16 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Draggable } from "gsap/Draggable";
 
-import { Container } from "./components/Container/Container";
-import { StyledHero, StyledHeroWrapper } from "./components/Hero/Hero.styled";
-import { HeroFrame } from "./components/HeroFrame/HeroFrame";
+import { Container } from "../components/Container/Container";
+import { StyledHero, StyledHeroWrapper } from "../components/Hero/Hero.styled";
+import { HeroFrame } from "../components/HeroFrame/HeroFrame";
 
-import { projects } from "./constants/projects";
+import { projects } from "../constants/projects";
+import { Navbar } from "../components/Navbar/Navbar";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, Draggable);
 
-function App() {
+const Home = () => {
   const main = useRef<HTMLDivElement>(null);
   const { contextSafe } = useGSAP();
 
@@ -94,11 +95,12 @@ function App() {
   return (
     <>
       <Container ref={main}>
+        <Navbar />
         <StyledHero>
           <StyledHeroWrapper className="hero_wrapper">
-            {projects.map((elm) => (
+            {projects.map((elm, index) => (
               <HeroFrame
-                key={elm.description}
+                key={elm.description + index}
                 imageUrl={elm.image_url}
                 description={elm.description}
                 styles={elm.css}
@@ -109,6 +111,6 @@ function App() {
       </Container>
     </>
   );
-}
+};
 
-export default App;
+export default Home;

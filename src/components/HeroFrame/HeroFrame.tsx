@@ -23,7 +23,7 @@ interface HeroFrame {
 
 gsap.registerPlugin(useGSAP);
 
-export const HeroFrame = ({ imageUrl, styles }: HeroFrame) => {
+export const HeroFrame = ({ imageUrl, styles, description }: HeroFrame) => {
   const heroRef = useRef(null);
   const { contextSafe } = useGSAP({ scope: heroRef });
 
@@ -32,7 +32,7 @@ export const HeroFrame = ({ imageUrl, styles }: HeroFrame) => {
       .querySelector(".hero_wrapper")!
       .getBoundingClientRect();
     const x = e.clientX - heroWrapper.left;
-    const y = e.clientY - heroWrapper.top - 60;
+    const y = e.clientY - heroWrapper.top - 60; // Position description 60px above the cursor
 
     gsap.to(".hero_description", {
       x: x,
@@ -70,7 +70,9 @@ export const HeroFrame = ({ imageUrl, styles }: HeroFrame) => {
           <StyledImg src={imageUrl} />
         </StyledFigure>
       </StyledHeroFrame>
-      <StyledDescription className="hero_description">Text</StyledDescription>
+      <StyledDescription className="hero_description">
+        {description}
+      </StyledDescription>
     </StyledHeroFrameWrapper>
   );
 };
