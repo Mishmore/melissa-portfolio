@@ -87,7 +87,7 @@ const Home = () => {
       scale: 2,
       ease: "power1.out",
       onComplete: drag,
-      stagger: 0.2,
+      stagger: 0.05,
       opacity: 0,
     });
   }, []);
