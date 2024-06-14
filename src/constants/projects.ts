@@ -1,180 +1,240 @@
 import { projectImages } from "../helpers/projectImages";
 
 interface Project {
-  image_url: string;
+  image_url: unknown;
   description: string;
   css: {
     width: string | number;
     height: string | number;
-    top: string | number;
-    left: string | number;
+    top?: string | number;
+    left?: string | number;
+    right?: string | number;
+    bottom?: string | number;
   };
 }
 
-const verticalXL = {
-  width: "39rem",
-  height: "51.9rem",
-};
-
-const verticalL = {
-  width: "28.4rem",
-  height: "37.8rem",
-};
-
-const verticalM = {
-  width: "19.3rem",
-  height: "25.7rem",
-};
-
-const verticalS = {
-  width: "11.9rem",
-  height: "15.8rem",
-};
-
-const square = {
-  width: "23rem",
-  height: "23rem",
-};
-
-const horizontalL = {
-  width: "52rem",
-  height: "39rem",
-};
-
-const horizontalM = {
-  width: "28.4rem",
-  height: "37.8rem",
-};
-
-const horizontalS = {
-  width: "23rem",
-  height: "19rem",
-};
-
 export const projects: Project[] = [
-  // Buque
   {
-    image_url: projectImages[0],
-    description: "Buque",
+    image_url: projectImages[20],
+    description: "Perfect Storm",
     css: {
-      ...verticalL,
-      left: "204rem",
-      top: "86rem",
-    },
-  },
-  {
-    image_url: projectImages[1],
-    description: "Buque",
-    css: {
-      ...horizontalL,
-      left: "206rem",
-      top: "153rem",
-    },
-  },
-  // Cafe con Borges
-  {
-    image_url: projectImages[2],
-    description: "Café con Borges",
-    css: { ...verticalS, left: "272rem", top: "105rem" },
-  },
-  {
-    image_url: projectImages[3],
-    description: "Café con Borges",
-    css: {
-      ...verticalM,
-      left: "114rem",
-      top: "153rem",
-    },
-  },
-  {
-    image_url: projectImages[4],
-    description: "Café con Borges",
-    css: {
-      ...verticalS,
-      left: "53rem",
-      top: "14rem",
-    },
-  },
-  {
-    image_url: projectImages[5],
-    description: "Café con Borges",
-    css: {
-      ...verticalL,
-      left: "19rem",
-      top: "33rem",
-    },
-  },
-  {
-    image_url: projectImages[6],
-    description: "Café con Borges",
-    css: {
-      ...horizontalM,
-      left: "176rem",
-      top: "15rem",
-    },
-  },
-  {
-    image_url: projectImages[7],
-    description: "Café con Borges",
-    css: {
-      ...verticalS,
-      left: "132rem",
-      top: "38rem",
+      width: "244px",
+      height: "372px",
+      left: "846px",
+      top: "792px",
     },
   },
   {
     image_url: projectImages[8],
     description: "Café con Borges",
     css: {
-      ...horizontalS,
-      left: "183rem",
-      top: "88rem",
+      width: "175px",
+      height: "150px",
+      left: "1130px",
+      top: "357px",
     },
   },
+  {
+    image_url: projectImages[18],
+    description: "Orvay",
+    css: {
+      width: "314px",
+      height: "449px",
+      left: "1715px",
+      top: "987px",
+    },
+  },
+  {
+    image_url: projectImages[22],
+    description: "Perfect Storm",
+    css: {
+      width: "262px",
+      height: "300px",
+      right: "1666px",
+      top: "1095px",
+    },
+  },
+  {
+    image_url: projectImages[0],
+    description: "Buque",
+    css: {
+      width: "294px",
+      height: "449px",
+      right: "1407px",
+      top: "1020px",
+    },
+  },
+  {
+    image_url: projectImages[23],
+    description: "Perfect Storm",
+    css: {
+      width: "114px",
+      height: "175px",
+      right: "1328px",
+      top: "1124px",
+    },
+  },
+  {
+    image_url: projectImages[1],
+    description: "Buque",
+    css: {
+      width: "601px",
+      height: "458px",
+      right: "1526px",
+      top: "255px",
+    },
+  },
+  {
+    image_url: projectImages[21],
+    description: "Perfect Storm",
+    css: {
+      width: "147px",
+      height: "225px",
+      left: "1376px",
+      top: "1118px",
+    },
+  },
+
+  {
+    image_url: projectImages[24],
+    description: "Perfect Storm",
+    css: {
+      width: "139px",
+      height: "211px",
+      left: "698px",
+      top: "1337px",
+    },
+  },
+  {
+    image_url: projectImages[25],
+    description: "Perfect Storm",
+    css: {
+      width: "195px",
+      height: "298px",
+      left: "1376px",
+      top: "1732px",
+    },
+  },
+  {
+    image_url: projectImages[26],
+    description: "Perfect Storm",
+    css: {
+      width: "104px",
+      height: "158px",
+      right: "849px",
+      top: "713px",
+    },
+  },
+  {
+    image_url: projectImages[2],
+    description: "Café con Borges",
+    css: {
+      width: "95px",
+      height: "135px",
+
+      right: "890px",
+      top: "287px",
+    },
+  },
+  {
+    image_url: projectImages[3],
+    description: "Café con Borges",
+    css: {
+      width: "376px",
+      height: "538px",
+      right: "261px",
+      top: "187px",
+    },
+  },
+  {
+    image_url: projectImages[4],
+    description: "Café con Borges",
+    css: {
+      width: "212px",
+      height: "304px",
+      left: "486px",
+      top: "203px",
+    },
+  },
+  {
+    image_url: projectImages[5],
+    description: "Café con Borges",
+    css: {
+      width: "377px",
+      height: "538px",
+      left: "183px",
+      top: "441px",
+    },
+  },
+  {
+    image_url: projectImages[6],
+    description: "Café con Borges",
+    css: {
+      width: "184px",
+      height: "263px",
+      right: "828px",
+      top: "1063px",
+    },
+  },
+  {
+    image_url: projectImages[7],
+    description: "Café con Borges",
+    css: {
+      width: "262px",
+      height: "375px",
+      left: "1488px",
+      top: "1095px",
+    },
+  },
+
   {
     image_url: projectImages[9],
     description: "Café con Borges",
     css: {
-      ...horizontalS,
-      left: "148rem",
-      top: "122rem",
+      width: "175px",
+      height: "150px",
+      right: "1075px",
+      top: "588px",
     },
   },
-  // Haums im Wald
   {
     image_url: projectImages[10],
     description: "Haums im Wald",
     css: {
-      ...verticalL,
-      left: "138rem",
-      top: "84rem",
+      width: "284px",
+      height: "406px",
+      right: "338px",
+      top: "1063px",
     },
   },
   {
     image_url: projectImages[11],
     description: "Haums im Wald",
     css: {
-      ...horizontalM,
-      left: "86rem",
-      top: "48rem",
+      width: "626px",
+      height: "421px",
+      left: "385px",
+      top: "1670px",
     },
   },
   {
     image_url: projectImages[12],
     description: "Haums im Wald",
     css: {
-      ...verticalS,
-      left: "92rem",
-      top: "95rem",
+      width: "89px",
+      height: "134px",
+      left: "1331px",
+      top: "710px",
     },
   },
   {
     image_url: projectImages[13],
     description: "Haums im Wald",
     css: {
-      ...square,
-      left: "57rem",
-      top: "103rem",
+      width: "299px",
+      height: "380px",
+      left: "148px",
+      top: "1358px",
     },
   },
   // Orvay
@@ -182,118 +242,51 @@ export const projects: Project[] = [
     image_url: projectImages[14],
     description: "Orvay",
     css: {
-      ...horizontalM,
-      left: "280rem",
-      top: "117rem",
+      width: "601px",
+      height: "516px",
+      right: "149px",
+      top: "1670px",
     },
   },
   {
     image_url: projectImages[15],
     description: "Orvay",
     css: {
-      ...horizontalM,
-      left: "284rem",
-      top: "49rem",
+      width: "275px",
+      height: "379px",
+      right: "703px",
+      top: "1842px",
     },
   },
   {
     image_url: projectImages[16],
     description: "Orvay",
     css: {
-      ...verticalL,
-      left: "250rem",
-      top: "22rem",
+      width: "164px",
+      height: "234px",
+      right: "930px",
+      top: "1670px",
     },
   },
   {
     image_url: projectImages[17],
     description: "Orvay",
     css: {
-      ...square,
-      left: "234rem",
-      top: "24rem",
+      width: "333px",
+      height: "381px",
+      right: "1717px",
+      top: "1787px",
     },
   },
-  {
-    image_url: projectImages[18],
-    description: "Orvay",
-    css: {
-      ...verticalL,
-      left: "315rem",
-      top: "139rem",
-    },
-  },
+
   {
     image_url: projectImages[19],
     description: "Orvay",
     css: {
-      ...verticalM,
-      left: "326rem",
-      top: "17rem",
-    },
-  },
-  // Perfect storm
-  {
-    image_url: projectImages[20],
-    description: "Perfect Storm",
-    css: {
-      ...verticalS,
-      left: "342rem",
-      top: "43rem",
-    },
-  },
-  {
-    image_url: projectImages[21],
-    description: "Perfect Storm",
-    css: {
-      ...verticalL,
-      left: "191rem",
-      top: "187rem",
-    },
-  },
-  {
-    image_url: projectImages[22],
-    description: "Perfect Storm",
-    css: {
-      ...square,
-      left: "169rem",
-      top: "105.8rem",
-    },
-  },
-  {
-    image_url: projectImages[23],
-    description: "Perfect Storm",
-    css: {
-      ...verticalS,
-      left: "90rem",
-      top: "169rem",
-    },
-  },
-  {
-    image_url: projectImages[24],
-    description: "Perfect Storm",
-    css: {
-      ...verticalM,
-      left: "290rem",
-      top: "157rem",
-    },
-  },
-  {
-    image_url: projectImages[25],
-    description: "Perfect Storm",
-    css: {
-      ...verticalM,
-      left: "98rem",
-      top: "181rem",
-    },
-  },
-  {
-    image_url: projectImages[26],
-    description: "Perfect Storm",
-    css: {
-      ...horizontalS,
-      left: "27rem",
-      top: "161rem",
+      width: "99px",
+      height: "141px",
+      right: "1358px",
+      top: "1740px",
     },
   },
 ];

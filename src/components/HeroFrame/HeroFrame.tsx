@@ -16,8 +16,10 @@ interface HeroFrame {
   styles: {
     width: string | number;
     height: string | number;
-    top: string | number;
-    left: string | number;
+    top?: string | number;
+    bottom?: string | number;
+    left?: string | number;
+    right?: string | number;
   };
 }
 
@@ -65,7 +67,7 @@ export const HeroFrame = ({ imageUrl, styles, description }: HeroFrame) => {
       onMouseOver={onMouseEnter}
       onMouseOut={onMouseLeave}
     >
-      <StyledHeroFrame className="hero_frame" {...styles}>
+      <StyledHeroFrame className="hero_frame" style={styles}>
         <StyledFigure>
           <StyledImg src={imageUrl} />
         </StyledFigure>
