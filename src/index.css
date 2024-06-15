@@ -6,6 +6,8 @@
 
 * {
   margin: 0;
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
 }
 
 #root {
@@ -46,4 +48,9 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

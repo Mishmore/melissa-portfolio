@@ -68,12 +68,12 @@ const Home = () => {
           ease: "power1.out",
           x: `+=${
             getDirection(direction).x != "0"
-              ? `${getDirection(direction).x}random([5,10,20])`
+              ? `${getDirection(direction).x}random([10,15])`
               : 0
           }`,
           y: `+=${
             getDirection(direction).y != "0"
-              ? `${getDirection(direction).y}random([5,10,20])`
+              ? `${getDirection(direction).y}random([10,15])`
               : 0
           }`,
         });

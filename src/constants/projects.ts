@@ -50,8 +50,8 @@ export const projects: Project[] = [
     css: {
       width: "262px",
       height: "300px",
-      right: "1666px",
-      top: "1095px",
+      left: "1985px",
+      top: "1208px",
     },
   },
   {
@@ -60,8 +60,8 @@ export const projects: Project[] = [
     css: {
       width: "294px",
       height: "449px",
-      right: "1407px",
-      top: "1020px",
+      right: "1344px",
+      top: "908px",
     },
   },
   {
@@ -70,8 +70,8 @@ export const projects: Project[] = [
     css: {
       width: "114px",
       height: "175px",
-      right: "1328px",
-      top: "1124px",
+      right: "1212px",
+      top: "1045px",
     },
   },
   {
@@ -90,8 +90,8 @@ export const projects: Project[] = [
     css: {
       width: "147px",
       height: "225px",
-      left: "1376px",
-      top: "1118px",
+      left: "1264px",
+      top: "1020px",
     },
   },
 
@@ -181,8 +181,8 @@ export const projects: Project[] = [
     css: {
       width: "262px",
       height: "375px",
-      left: "1488px",
-      top: "1095px",
+      left: "1432px",
+      top: "1094px",
     },
   },
 

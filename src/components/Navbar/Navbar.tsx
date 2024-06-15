@@ -1,15 +1,18 @@
-import { NavLink } from "react-router-dom";
-import { StyledLogoWrapper, StyledNavbar } from "./Navbar.styled";
+import {
+  StyledLogoWrapper,
+  StyledNavbar,
+  StyledNavlink,
+} from "./Navbar.styled";
 
 export const Navbar = () => {
   return (
     <StyledNavbar>
-      <NavLink to="/work">Work</NavLink>
+      <StyledNavlink to="/work">Work</StyledNavlink>
       <StyledLogoWrapper>
-        <NavLink to="/">Melissa</NavLink>
+        <StyledNavlink to="/">melissa more</StyledNavlink>
       </StyledLogoWrapper>
-      <NavLink to="/about">About</NavLink>
-      <NavLink to="/contact">Contact</NavLink>
+      <StyledNavlink to="/about">About</StyledNavlink>
+      <StyledNavlink to="/contact">Contact</StyledNavlink>
     </StyledNavbar>
   );
 };
