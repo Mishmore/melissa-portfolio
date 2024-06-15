@@ -8,9 +8,7 @@ export const Navbar = () => {
   return (
     <StyledNavbar>
       <StyledNavlink to="/work">Work</StyledNavlink>
-      <StyledLogoWrapper>
-        <StyledNavlink to="/">melissa more</StyledNavlink>
-      </StyledLogoWrapper>
+      <StyledLogoWrapper to="/">melissa more</StyledLogoWrapper>
       <StyledNavlink to="/about">About</StyledNavlink>
       <StyledNavlink to="/contact">Contact</StyledNavlink>
     </StyledNavbar>
