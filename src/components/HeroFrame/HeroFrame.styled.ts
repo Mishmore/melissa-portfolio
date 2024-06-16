@@ -20,7 +20,7 @@ export const StyledImg = styled.img`
 
 export const StyledDescription = styled.figcaption`
   opacity: 0;
-  color: #fff;
+  color: ${(props) => props.theme.beige};
   padding: 1rem 0.8rem;
   position: absolute;
   text-align: center;

@@ -3,24 +3,28 @@ import { NavLink } from "react-router-dom";
 
 export const StyledNavbar = styled.nav`
   display: flex;
-  padding: 4rem 8rem 2.5rem;
-  gap: 1.6rem;
+  padding: 1.8rem 6rem;
+  gap: 4rem;
   align-items: center;
   z-index: 10;
   position: relative;
 
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: grayscale(100%) blur(5px);
-  -webkit-backdrop-filter: grayscale(100%) blur(5px);
-  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+  background-color: ${(props) => props.theme.beigeAlpha};
+  border-bottom: ${(props) => props.theme.darkBeige} solid 1px;
+  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+  color: ${(props) => props.theme.brownGray};
 `;
 
-export const StyledLogoWrapper = styled(NavLink)`
+export const StyledLogoWrapper = styled.div`
   display: flex;
   flex-grow: 1;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
+  align-items: start;
+  justify-content: start;
+`;
+
+export const StyledLogo = styled(NavLink)`
+  font-size: 1.8rem;
   font-weight: 500;
   text-transform: lowercase;
 `;
@@ -28,6 +32,7 @@ export const StyledLogoWrapper = styled(NavLink)`
 export const StyledNavlink = styled(NavLink)`
   position: relative;
   text-transform: uppercase;
+  font-size: 1.2rem;
 
   &::selection {
     background: #000;
@@ -36,8 +41,8 @@ export const StyledNavlink = styled(NavLink)`
 
   &::before {
     content: "";
-    background-color: #000;
-    height: 0.2rem;
+    background-color: ${(props) => props.theme.brownGray};
+    height: 0.15rem;
     left: 0;
     position: absolute;
     bottom: 0;
