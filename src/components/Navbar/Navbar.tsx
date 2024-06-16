@@ -1,6 +1,13 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/all";
+
+import {
+  PAHT_ABOUT,
+  PAHT_CONTACT,
+  PAHT_HOME,
+  PAHT_PROJECTS,
+} from "../../constants/routes";
 import {
   StyledLogo,
   StyledLogoWrapper,
@@ -30,13 +37,13 @@ export const Navbar = () => {
   return (
     <StyledNavbar>
       <StyledLogoWrapper>
-        <StyledLogo to="/" id="logo" onMouseEnter={onMouseEnter}>
+        <StyledLogo to={PAHT_HOME} id="logo" onMouseEnter={onMouseEnter}>
           melissa more
         </StyledLogo>
       </StyledLogoWrapper>
-      <StyledNavlink to="/work">Work</StyledNavlink>
-      <StyledNavlink to="/about">About</StyledNavlink>
-      <StyledNavlink to="/contact">Contact</StyledNavlink>
+      <StyledNavlink to={PAHT_PROJECTS}>Work</StyledNavlink>
+      <StyledNavlink to={PAHT_ABOUT}>About</StyledNavlink>
+      <StyledNavlink to={PAHT_CONTACT}>Contact</StyledNavlink>
     </StyledNavbar>
   );
 };

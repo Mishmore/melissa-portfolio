@@ -8,19 +8,30 @@ import Home from "./pages/Home.tsx";
 import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
 import theme from "./theme.ts";
+import Projects from "./pages/Projects.tsx";
+import {
+  PAHT_ABOUT,
+  PAHT_CONTACT,
+  PAHT_HOME,
+  PAHT_PROJECTS,
+} from "./constants/routes.ts";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: PAHT_HOME,
     element: <Home />,
   },
   {
-    path: "/contact",
+    path: PAHT_CONTACT,
     element: <Contact />,
   },
   {
-    path: "/about",
+    path: PAHT_ABOUT,
     element: <About />,
+  },
+  {
+    path: PAHT_PROJECTS,
+    element: <Projects />,
   },
 ]);
 
