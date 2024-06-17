@@ -31,8 +31,8 @@ export const StyledLogo = styled(NavLink)`
 
 export const StyledNavlink = styled(NavLink)`
   position: relative;
-  text-transform: uppercase;
-  font-size: 1.2rem;
+  text-transform: lowercase;
+  font-size: 1.6rem;
 
   &::selection {
     background: #000;

@@ -20,11 +20,11 @@ export const Navbar = () => {
     gsap.fromTo(
       "#logo",
       {
-        text: "more melissa",
+        text: "MORE MELISSA",
         duration: 1,
       },
       {
-        text: "melissa more",
+        text: "MELISSA MORE",
         duration: 1,
       }
     );
@@ -34,7 +34,7 @@ export const Navbar = () => {
     <StyledNavbar>
       <StyledLogoWrapper>
         <StyledLogo to={PAHT_HOME} id="logo" onMouseEnter={onMouseEnter}>
-          melissa more
+          MELISSA MORE
         </StyledLogo>
       </StyledLogoWrapper>
       <StyledNavlink to={PAHT_PROJECTS}>Projects</StyledNavlink>
