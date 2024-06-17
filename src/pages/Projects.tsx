@@ -19,28 +19,28 @@ import { gsap, useGSAP } from "../helpers/gsap";
 const projects = [
   {
     image: CafeConBorges,
-    title: "Café con Borges.",
+    title: "Café con Borges",
     id: "cafe_con_borges",
   },
   {
     image: PerfectStorm,
-    title: "Perfect Storm.",
+    title: "Perfect Storm",
     id: "perfect_storm",
   },
   {
     image: Buque,
-    title: "Buque.",
+    title: "Buque",
     id: "buque",
   },
   {
     image: Orvay,
-    title: "Orvay.",
+    title: "Orvay",
     id: "orvay",
   },
   {
     image: HaumsInWald,
-    title: "Haums in Wald.",
-    id: "haums_in_wald",
+    title: "Haus im Wald",
+    id: "haus_im_wald",
   },
 ];
 

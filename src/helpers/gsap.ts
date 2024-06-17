@@ -17,15 +17,19 @@ gsap.registerEffect({
       targets,
       {
         y: "100%",
+        opacity: 0,
       },
       {
         y: 0,
+        opacity: 1,
         stagger: 0.05,
         duration: 1.5,
         ease: "power4.out",
         scrollTrigger: {
           trigger: targets,
-          start: "top +=80%",
+          start: "top bottom",
+          markers: true,
+          toggleActions: "restart none resume reset",
         },
       }
     ),

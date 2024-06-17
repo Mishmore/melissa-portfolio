@@ -24,7 +24,7 @@ export const StyledLogoWrapper = styled.div`
 `;
 
 export const StyledLogo = styled(NavLink)`
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 500;
   text-transform: lowercase;
 `;
@@ -32,30 +32,10 @@ export const StyledLogo = styled(NavLink)`
 export const StyledNavlink = styled(NavLink)`
   position: relative;
   text-transform: lowercase;
-  font-size: 1.6rem;
+  font-size: 2rem;
 
   &::selection {
     background: #000;
     color: #fff;
-  }
-
-  &::before {
-    content: "";
-    background-color: ${(props) => props.theme.brownGray};
-    height: 0.15rem;
-    left: 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
-      background-color 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
-
-  &:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
   }
 `;
