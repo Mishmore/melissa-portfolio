@@ -1,8 +1,5 @@
 import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Draggable } from "gsap/Draggable";
+import { gsap, useGSAP, Draggable } from "../helpers/gsap";
 
 import { Container } from "../components/Container/Container";
 import { StyledHero, StyledHeroWrapper } from "../components/Hero/Hero.styled";
@@ -10,8 +7,6 @@ import { HeroFrame } from "../components/HeroFrame/HeroFrame";
 
 import { projects } from "../constants/projects";
 import { Navbar } from "../components/Navbar/Navbar";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger, Draggable);
 
 const Home = () => {
   const main = useRef<HTMLDivElement>(null);
@@ -68,12 +63,12 @@ const Home = () => {
           ease: "power1.out",
           x: `+=${
             getDirection(direction).x != "0"
-              ? `${getDirection(direction).x}random([10,15])`
+              ? `${getDirection(direction).x}random([10,15,20])`
               : 0
           }`,
           y: `+=${
             getDirection(direction).y != "0"
-              ? `${getDirection(direction).y}random([10,15])`
+              ? `${getDirection(direction).y}random([10,15,20])`
               : 0
           }`,
         });
@@ -90,7 +85,7 @@ const Home = () => {
       stagger: 0.05,
       opacity: 0,
     });
-  }, []);
+  });
 
   return (
     <>

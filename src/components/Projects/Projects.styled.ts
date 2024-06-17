@@ -6,12 +6,12 @@ export const StyledProjectImage = styled.img`
   position: absolute;
 `;
 
-export const StyledProjectTitle = styled.p`
+export const StyledProjectTitle = styled.p<{ id: string }>`
   color: ${(props) => props.theme.beige};
   font-size: 6vw;
   position: absolute;
   max-width: 30vw;
-  line-height: 6vw;
+  line-height: 1.2;
 `;
 
 export const StyledContainer = styled.div`

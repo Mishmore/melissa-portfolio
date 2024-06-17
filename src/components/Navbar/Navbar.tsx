@@ -1,6 +1,4 @@
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { TextPlugin } from "gsap/all";
+import { gsap, useGSAP } from "../../helpers/gsap";
 
 import {
   PAHT_ABOUT,
@@ -14,8 +12,6 @@ import {
   StyledNavbar,
   StyledNavlink,
 } from "./Navbar.styled";
-
-gsap.registerPlugin(useGSAP, TextPlugin);
 
 export const Navbar = () => {
   const { contextSafe } = useGSAP();
@@ -41,7 +37,7 @@ export const Navbar = () => {
           melissa more
         </StyledLogo>
       </StyledLogoWrapper>
-      <StyledNavlink to={PAHT_PROJECTS}>Work</StyledNavlink>
+      <StyledNavlink to={PAHT_PROJECTS}>Projects</StyledNavlink>
       <StyledNavlink to={PAHT_ABOUT}>About</StyledNavlink>
       <StyledNavlink to={PAHT_CONTACT}>Contact</StyledNavlink>
     </StyledNavbar>

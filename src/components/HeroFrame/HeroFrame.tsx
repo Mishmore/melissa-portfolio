@@ -1,6 +1,5 @@
 import { MouseEventHandler, useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { gsap, useGSAP } from "../../helpers/gsap";
 
 import {
   StyledHeroFrame,
@@ -22,8 +21,6 @@ interface HeroFrame {
     right?: string | number;
   };
 }
-
-gsap.registerPlugin(useGSAP);
 
 export const HeroFrame = ({ imageUrl, styles, description }: HeroFrame) => {
   const heroRef = useRef(null);
