@@ -8,10 +8,10 @@ export const StyledProjectImage = styled.img`
 
 export const StyledProjectTitle = styled.p<{ id: string }>`
   color: ${(props) => props.theme.beige};
-  font-size: 5vw;
+  font-size: 4vw;
   position: absolute;
-  max-width: 30vw;
-  line-height: 1.2;
+  max-width: 20vw;
+  line-height: 0.9;
 `;
 
 export const StyledContainer = styled.div`
@@ -26,7 +26,7 @@ export const StyledContainer = styled.div`
     }
 
     ${StyledProjectTitle} {
-      top: 24vw;
+      top: 30vw;
       left: 52vw;
     }
   }
@@ -39,8 +39,8 @@ export const StyledContainer = styled.div`
     }
 
     ${StyledProjectTitle} {
-      top: 95vw;
-      left: 32vw;
+      top: 100vw;
+      left: 40vw;
     }
   }
 
@@ -52,8 +52,8 @@ export const StyledContainer = styled.div`
     }
 
     ${StyledProjectTitle} {
-      top: 140vw;
-      left: 65vw;
+      top: 145vw;
+      left: 63vw;
     }
   }
 
@@ -65,7 +65,7 @@ export const StyledContainer = styled.div`
     }
 
     ${StyledProjectTitle} {
-      top: 190vw;
+      top: 205vw;
       left: 52vw;
     }
   }
@@ -79,7 +79,7 @@ export const StyledContainer = styled.div`
 
     ${StyledProjectTitle} {
       top: 240vw;
-      left: 25vw;
+      left: 38vw;
     }
   }
 `;

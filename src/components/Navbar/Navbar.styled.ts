@@ -8,6 +8,8 @@ export const StyledNavbar = styled.nav`
   align-items: center;
   z-index: 10;
   position: relative;
+  position: sticky;
+  top: 0;
 
   background-color: ${(props) => props.theme.beigeAlpha};
   border-bottom: ${(props) => props.theme.darkBeige} solid 1px;
@@ -33,6 +35,8 @@ export const StyledNavlink = styled(NavLink)`
   position: relative;
   text-transform: lowercase;
   font-size: 2rem;
+  min-width: 8rem;
+  text-align: center;
 
   &::selection {
     background: #000;

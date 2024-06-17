@@ -46,18 +46,36 @@ const projects = [
 
 const Projects = () => {
   useGSAP(() => {
-    projects.map((elm) => {
+    projects.map((elm, index) => {
       const projectTitle = new SplitType(`#${elm.id}`, {
         types: "words,lines",
       });
-      const words = projectTitle.words;
 
       gsap.set(projectTitle.lines, {
-        overflow: "hidden",
         fontKerning: "none",
       });
 
-      gsap.effects.textSwipeIn(words);
+      gsap.effects.textLeftIn(projectTitle.lines);
+
+      gsap.fromTo(
+        `.project_image_${index}`,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          duration: 1,
+          opacity: 1,
+          delay: 0.2,
+          y: 0,
+          ease: "expo.out",
+          scrollTrigger: {
+            trigger: `.project_image_${index}`,
+            start: "top 90%",
+            toggleActions: "restart none resume reset",
+          },
+        }
+      );
     });
   });
 
@@ -66,9 +84,12 @@ const Projects = () => {
       <Navbar />
 
       <StyledContainer>
-        {projects.map((elm) => (
+        {projects.map((elm, index) => (
           <SytledProjectWrapper key={elm.title}>
-            <StyledProjectImage src={elm.image} />
+            <StyledProjectImage
+              src={elm.image}
+              className={`project_image_${index}`}
+            />
             <StyledProjectTitle id={elm.id}>{elm.title}</StyledProjectTitle>
           </SytledProjectWrapper>
         ))}

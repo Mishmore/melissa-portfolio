@@ -16,15 +16,21 @@ import {
 export const Navbar = () => {
   const { contextSafe } = useGSAP();
 
-  const onMouseEnter = contextSafe(() => {
+  const navOptions = [
+    { path: PAHT_PROJECTS, title: "Projects" },
+    { path: PAHT_ABOUT, title: "About" },
+    { path: PAHT_CONTACT, title: "Contact" },
+  ];
+
+  const onMouseEnter = contextSafe((text: string, id: string) => {
     gsap.fromTo(
-      "#logo",
+      `#${id}`,
       {
-        text: "MORE MELISSA",
+        text: text.split("").reverse().join(""),
         duration: 1,
       },
       {
-        text: "MELISSA MORE",
+        text: text,
         duration: 1,
       }
     );
@@ -33,13 +39,24 @@ export const Navbar = () => {
   return (
     <StyledNavbar>
       <StyledLogoWrapper>
-        <StyledLogo to={PAHT_HOME} id="logo" onMouseEnter={onMouseEnter}>
+        <StyledLogo
+          to={PAHT_HOME}
+          id="logo"
+          onMouseEnter={() => onMouseEnter("Melissa More", "logo")}
+        >
           MELISSA MORE
         </StyledLogo>
       </StyledLogoWrapper>
-      <StyledNavlink to={PAHT_PROJECTS}>Projects</StyledNavlink>
-      <StyledNavlink to={PAHT_ABOUT}>About</StyledNavlink>
-      <StyledNavlink to={PAHT_CONTACT}>Contact</StyledNavlink>
+      {navOptions.map((elm) => (
+        <StyledNavlink
+          key={elm.title}
+          to={elm.path}
+          id={elm.title}
+          onMouseEnter={() => onMouseEnter(elm.title, elm.title)}
+        >
+          {elm.title}
+        </StyledNavlink>
+      ))}
     </StyledNavbar>
   );
 };
