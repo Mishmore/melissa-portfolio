@@ -7,6 +7,7 @@ import {
   StyledProjectTitle,
   StyledContainer,
   SytledProjectWrapper,
+  StyledProjectFigure,
 } from "../components/Projects/Projects.styled";
 
 import Buque from "../assets/projects-page/buque_2.jpg";
@@ -61,7 +62,7 @@ const Projects = () => {
         `.project_image_${index}`,
         {
           opacity: 0,
-          y: 50,
+          y: "2vw",
         },
         {
           duration: 1,
@@ -69,6 +70,23 @@ const Projects = () => {
           delay: 0.2,
           y: 0,
           ease: "expo.out",
+          scrollTrigger: {
+            trigger: `.project_image_${index}`,
+            start: "top 90%",
+            toggleActions: "restart none resume reset",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        `.project_image_${index} img`,
+        {
+          scale: 1.08,
+        },
+        {
+          duration: 1,
+          scale: 1,
+          ease: "power1.out",
           scrollTrigger: {
             trigger: `.project_image_${index}`,
             start: "top 90%",
@@ -86,10 +104,9 @@ const Projects = () => {
       <StyledContainer>
         {projects.map((elm, index) => (
           <SytledProjectWrapper key={elm.title}>
-            <StyledProjectImage
-              src={elm.image}
-              className={`project_image_${index}`}
-            />
+            <StyledProjectFigure className={`project_image_${index}`}>
+              <StyledProjectImage src={elm.image} />
+            </StyledProjectFigure>
             <StyledProjectTitle id={elm.id}>{elm.title}</StyledProjectTitle>
           </SytledProjectWrapper>
         ))}

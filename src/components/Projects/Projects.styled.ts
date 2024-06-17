@@ -2,8 +2,15 @@ import styled from "styled-components";
 
 export const SytledProjectWrapper = styled.div``;
 
-export const StyledProjectImage = styled.img`
+export const StyledProjectFigure = styled.figure`
   position: absolute;
+  overflow: hidden;
+`;
+
+export const StyledProjectImage = styled.img`
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
 `;
 
 export const StyledProjectTitle = styled.p<{ id: string }>`
@@ -16,23 +23,23 @@ export const StyledProjectTitle = styled.p<{ id: string }>`
 
 export const StyledContainer = styled.div`
   background-color: ${(props) => props.theme.brown};
-  height: 290vw;
+  height: 280vw;
 
   ${SytledProjectWrapper}:nth-child(1) {
-    ${StyledProjectImage} {
+    ${StyledProjectFigure} {
       width: 40vw;
-      top: 20vw;
+      top: 12vw;
       left: 8vw;
     }
 
     ${StyledProjectTitle} {
-      top: 30vw;
+      top: 24vw;
       left: 52vw;
     }
   }
 
   ${SytledProjectWrapper}:nth-child(2) {
-    ${StyledProjectImage} {
+    ${StyledProjectFigure} {
       width: 33vw;
       top: 68vw;
       right: 8vw;
@@ -45,7 +52,7 @@ export const StyledContainer = styled.div`
   }
 
   ${SytledProjectWrapper}:nth-child(3) {
-    ${StyledProjectImage} {
+    ${StyledProjectFigure} {
       width: 50vw;
       top: 130vw;
       left: 8vw;
@@ -58,7 +65,7 @@ export const StyledContainer = styled.div`
   }
 
   ${SytledProjectWrapper}:nth-child(4) {
-    ${StyledProjectImage} {
+    ${StyledProjectFigure} {
       width: 40vw;
       top: 180vw;
       left: 8vw;
@@ -71,7 +78,7 @@ export const StyledContainer = styled.div`
   }
 
   ${SytledProjectWrapper}:nth-child(5) {
-    ${StyledProjectImage} {
+    ${StyledProjectFigure} {
       width: 33vw;
       top: 230vw;
       right: 8vw;
