@@ -90,7 +90,7 @@ const Home = () => {
   return (
     <>
       <Container ref={main}>
-        <Navbar />
+        <Navbar hideOnScroll={false} />
         <StyledHero>
           <StyledHeroWrapper className="hero_wrapper">
             {projects.map((elm, index) => (

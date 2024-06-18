@@ -7,8 +7,8 @@ export const StyledNavbar = styled.nav`
   gap: 4rem;
   align-items: center;
   z-index: 10;
-  position: relative;
-  position: sticky;
+  position: absolute;
+  width: 100%;
   top: 0;
 
   background-color: ${(props) => props.theme.beigeAlpha};

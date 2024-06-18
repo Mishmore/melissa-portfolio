@@ -1,14 +1,16 @@
 export * from "gsap";
 export * from "@gsap/react";
 export { Draggable } from "gsap/Draggable";
+export { Observer } from "gsap/Observer";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextPlugin from "gsap/TextPlugin";
 import { Draggable } from "gsap/Draggable";
+import { Observer } from "gsap/Observer";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin, Draggable);
+gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin, Draggable, Observer);
 
 gsap.registerEffect({
   name: "textSwipeIn",
