@@ -49,8 +49,8 @@ gsap.registerEffect({
         opacity: 1,
         stagger: 0.2,
         duration: 2,
-        delay: 0.2,
-        ease: "expo.out",
+        delay: 0.5,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: targets,
           start: "top bottom",

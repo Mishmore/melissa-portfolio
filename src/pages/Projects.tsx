@@ -62,31 +62,14 @@ const Projects = () => {
         `.project_image_${index}`,
         {
           opacity: 0,
-          y: "2vw",
+          y: "4vw",
         },
         {
-          duration: 1,
+          duration: 3,
           opacity: 1,
           delay: 0.2,
           y: 0,
-          ease: "expo.out",
-          scrollTrigger: {
-            trigger: `.project_image_${index}`,
-            start: "top 90%",
-            toggleActions: "restart none resume reset",
-          },
-        }
-      );
-
-      gsap.fromTo(
-        `.project_image_${index} img`,
-        {
-          scale: 1.08,
-        },
-        {
-          duration: 1,
-          scale: 1,
-          ease: "power1.out",
+          ease: "power4.out",
           scrollTrigger: {
             trigger: `.project_image_${index}`,
             start: "top 90%",
