@@ -1,4 +1,4 @@
-import { projectImages } from "../helpers/projectImages";
+import { homeProjectsList } from "../helpers/homeProjectsList";
 
 interface Project {
   image_url: string;
@@ -15,7 +15,7 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    image_url: projectImages[20] as string,
+    image_url: homeProjectsList[20] as string,
     description: "Perfect Storm",
     css: {
       width: "244px",
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[8] as string,
+    image_url: homeProjectsList[8] as string,
     description: "Café con Borges",
     css: {
       width: "260px",
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[18] as string,
+    image_url: homeProjectsList[18] as string,
     description: "Orvay",
     css: {
       width: "314px",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[22] as string,
+    image_url: homeProjectsList[22] as string,
     description: "Perfect Storm",
     css: {
       width: "262px",
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[0] as string,
+    image_url: homeProjectsList[0] as string,
     description: "Buque",
     css: {
       width: "294px",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[23] as string,
+    image_url: homeProjectsList[23] as string,
     description: "Perfect Storm",
     css: {
       width: "114px",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[1] as string,
+    image_url: homeProjectsList[1] as string,
     description: "Buque",
     css: {
       width: "601px",
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[21] as string,
+    image_url: homeProjectsList[21] as string,
     description: "Perfect Storm",
     css: {
       width: "147px",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
   },
 
   {
-    image_url: projectImages[24] as string,
+    image_url: homeProjectsList[24] as string,
     description: "Perfect Storm",
     css: {
       width: "105px",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[25] as string,
+    image_url: homeProjectsList[25] as string,
     description: "Perfect Storm",
     css: {
       width: "195px",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[26] as string,
+    image_url: homeProjectsList[26] as string,
     description: "Perfect Storm",
     css: {
       width: "104px",
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[2] as string,
+    image_url: homeProjectsList[2] as string,
     description: "Café con Borges",
     css: {
       width: "95px",
@@ -136,7 +136,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[3] as string,
+    image_url: homeProjectsList[3] as string,
     description: "Café con Borges",
     css: {
       width: "376px",
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[4] as string,
+    image_url: homeProjectsList[4] as string,
     description: "Café con Borges",
     css: {
       width: "212px",
@@ -156,7 +156,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[5] as string,
+    image_url: homeProjectsList[5] as string,
     description: "Café con Borges",
     css: {
       width: "377px",
@@ -166,7 +166,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[6] as string,
+    image_url: homeProjectsList[6] as string,
     description: "Café con Borges",
     css: {
       width: "184px",
@@ -176,7 +176,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[7] as string,
+    image_url: homeProjectsList[7] as string,
     description: "Café con Borges",
     css: {
       width: "262px",
@@ -187,7 +187,7 @@ export const projects: Project[] = [
   },
 
   {
-    image_url: projectImages[9] as string,
+    image_url: homeProjectsList[9] as string,
     description: "Café con Borges",
     css: {
       width: "309px",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[10] as string,
+    image_url: homeProjectsList[10] as string,
     description: "Haums im Wald",
     css: {
       width: "284px",
@@ -207,7 +207,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[11] as string,
+    image_url: homeProjectsList[11] as string,
     description: "Haums im Wald",
     css: {
       width: "626px",
@@ -217,7 +217,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[12] as string,
+    image_url: homeProjectsList[12] as string,
     description: "Haums im Wald",
     css: {
       width: "89px",
@@ -227,7 +227,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[13] as string,
+    image_url: homeProjectsList[13] as string,
     description: "Haums im Wald",
     css: {
       width: "299px",
@@ -238,7 +238,7 @@ export const projects: Project[] = [
   },
   // Orvay
   {
-    image_url: projectImages[14] as string,
+    image_url: homeProjectsList[14] as string,
     description: "Orvay",
     css: {
       width: "601px",
@@ -248,7 +248,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[15] as string,
+    image_url: homeProjectsList[15] as string,
     description: "Orvay",
     css: {
       width: "275px",
@@ -258,7 +258,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[16] as string,
+    image_url: homeProjectsList[16] as string,
     description: "Orvay",
     css: {
       width: "164px",
@@ -268,7 +268,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: projectImages[17] as string,
+    image_url: homeProjectsList[17] as string,
     description: "Orvay",
     css: {
       width: "333px",
@@ -279,7 +279,7 @@ export const projects: Project[] = [
   },
 
   {
-    image_url: projectImages[19] as string,
+    image_url: homeProjectsList[19] as string,
     description: "Orvay",
     css: {
       width: "99px",

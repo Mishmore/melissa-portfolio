@@ -5,7 +5,7 @@ import { Container } from "../components/Container/Container";
 import { StyledHero, StyledHeroWrapper } from "../components/Hero/Hero.styled";
 import { HeroFrame } from "../components/HeroFrame/HeroFrame";
 
-import { projects } from "../constants/projects";
+import { projects } from "../constants/homeProjects";
 import { Navbar } from "../components/Navbar/Navbar";
 
 const Home = () => {

@@ -5,12 +5,15 @@ export const SytledProjectWrapper = styled.div``;
 export const StyledProjectFigure = styled.figure`
   position: absolute;
   overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const StyledProjectImage = styled.img`
   width: 100%;
   height: 100%;
-  transform: scale(1);
 `;
 
 export const StyledProjectTitle = styled.p<{ id: string }>`

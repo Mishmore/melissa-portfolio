@@ -1,9 +1,9 @@
+import { gsap, useGSAP } from "../helpers/gsap";
 import SplitType from "split-type";
 
 import { Container } from "../components/Container/Container";
 import { Navbar } from "../components/Navbar/Navbar";
 import {
-  StyledProjectImage,
   StyledProjectTitle,
   StyledContainer,
   SytledProjectWrapper,
@@ -16,7 +16,12 @@ import HaumsInWald from "../assets/projects-page/haums_im_wald_1.jpg";
 import Orvay from "../assets/projects-page/orvay_4.jpg";
 import PerfectStorm from "../assets/projects-page/perfect_storm_1.jpg";
 
-import { gsap, useGSAP } from "../helpers/gsap";
+import { ProjectImage } from "../components/Projects/ProjectImage";
+import { useRef } from "react";
+
+const PROJECT_TITLE_PREFIX = "project_title";
+const PROJECT_FIGURE_PREFIX = "project_figure";
+
 const projects = [
   {
     image: CafeConBorges,
@@ -47,8 +52,9 @@ const projects = [
 
 const Projects = () => {
   useGSAP(() => {
-    projects.map((elm, index) => {
-      const projectTitle = new SplitType(`#${elm.id}`, {
+    projects.map((elm) => {
+      // Title fade animation
+      const projectTitle = new SplitType(`#${PROJECT_TITLE_PREFIX}_${elm.id}`, {
         types: "words,lines",
       });
 
@@ -58,8 +64,9 @@ const Projects = () => {
 
       gsap.effects.textLeftIn(projectTitle.lines);
 
+      // Project figure fade animation
       gsap.fromTo(
-        `.project_image_${index}`,
+        `#${PROJECT_FIGURE_PREFIX}_${elm.id}`,
         {
           opacity: 0,
           y: "4vw",
@@ -71,7 +78,7 @@ const Projects = () => {
           y: 0,
           ease: "power4.out",
           scrollTrigger: {
-            trigger: `.project_image_${index}`,
+            trigger: `#${PROJECT_FIGURE_PREFIX}_${elm.id}`,
             start: "top 90%",
             toggleActions: "restart none resume reset",
           },
@@ -80,17 +87,30 @@ const Projects = () => {
     });
   });
 
+  const openProject = (id: string) => {
+    console.log(id);
+  };
+
   return (
     <Container>
       <Navbar />
 
       <StyledContainer>
-        {projects.map((elm, index) => (
+        {projects.map((elm) => (
           <SytledProjectWrapper key={elm.title}>
-            <StyledProjectFigure className={`project_image_${index}`}>
-              <StyledProjectImage src={elm.image} />
+            <StyledProjectFigure
+              className="project_figure"
+              id={`${PROJECT_FIGURE_PREFIX}_${elm.id}`}
+              onClick={() => openProject(elm.id)}
+            >
+              <ProjectImage src={elm.image} />
             </StyledProjectFigure>
-            <StyledProjectTitle id={elm.id}>{elm.title}</StyledProjectTitle>
+            <StyledProjectTitle
+              id={`${PROJECT_TITLE_PREFIX}_${elm.id}`}
+              className="project_title"
+            >
+              {elm.title}
+            </StyledProjectTitle>
           </SytledProjectWrapper>
         ))}
       </StyledContainer>
