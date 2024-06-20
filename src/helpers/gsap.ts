@@ -2,6 +2,7 @@ export * from "gsap";
 export * from "@gsap/react";
 export { Draggable } from "gsap/Draggable";
 export { Observer } from "gsap/Observer";
+export { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";

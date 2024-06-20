@@ -9,11 +9,14 @@ import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
 import theme from "./theme.ts";
 import Projects from "./pages/Projects.tsx";
+import Gallery from "./pages/Gallery.tsx";
+
 import {
   PAHT_ABOUT,
   PAHT_CONTACT,
   PAHT_HOME,
   PAHT_PROJECTS,
+  PAHT_PROJECTS_DETAIL,
 } from "./constants/routes.ts";
 
 const router = createBrowserRouter([
@@ -32,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: PAHT_PROJECTS,
     element: <Projects />,
+  },
+  {
+    path: PAHT_PROJECTS_DETAIL,
+    element: <Gallery />,
   },
 ]);
 

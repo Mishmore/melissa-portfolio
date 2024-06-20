@@ -18,6 +18,7 @@ import PerfectStorm from "../assets/projects-page/perfect_storm_1.jpg";
 
 import { ProjectImage } from "../components/Projects/ProjectImage";
 import { useRef } from "react";
+import { useLenis } from "../hooks/useLenis";
 
 const PROJECT_TITLE_PREFIX = "project_title";
 const PROJECT_FIGURE_PREFIX = "project_figure";
@@ -51,6 +52,8 @@ const projects = [
 ];
 
 const Projects = () => {
+  useLenis();
+
   useGSAP(() => {
     projects.map((elm) => {
       // Title fade animation
