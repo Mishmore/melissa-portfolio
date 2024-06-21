@@ -43,8 +43,6 @@ const Gallery = () => {
     () => {
       let mm = gsap.matchMedia();
 
-      ScrollTrigger.refresh();
-
       mm.add("(min-width: 1024px)", () => {
         const tween = gsap.to(galleryRef.current, {
           x: getScrollAmount,

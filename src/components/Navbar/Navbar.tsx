@@ -45,6 +45,7 @@ export const Navbar = ({ hideOnScroll = true }: Navbar) => {
   useGSAP(() => {
     if (hideOnScroll) {
       Observer.create({
+        id: "navbar-scroll",
         target: window,
         type: "wheel",
         onUp: () => {

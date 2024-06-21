@@ -17,8 +17,8 @@ import Orvay from "../assets/projects-page/orvay_4.jpg";
 import PerfectStorm from "../assets/projects-page/perfect_storm_1.jpg";
 
 import { ProjectImage } from "../components/Projects/ProjectImage";
-import { useRef } from "react";
 import { useLenis } from "../hooks/useLenis";
+import { useNavigate } from "react-router-dom";
 
 const PROJECT_TITLE_PREFIX = "project_title";
 const PROJECT_FIGURE_PREFIX = "project_figure";
@@ -52,6 +52,8 @@ const projects = [
 ];
 
 const Projects = () => {
+  const navigate = useNavigate();
+
   useLenis();
 
   useGSAP(() => {
@@ -91,7 +93,7 @@ const Projects = () => {
   });
 
   const openProject = (id: string) => {
-    console.log(id);
+    navigate(id);
   };
 
   return (
