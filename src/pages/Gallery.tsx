@@ -16,7 +16,7 @@ const Gallery = () => {
   const [width, setWidth] = useState(0);
 
   useLayoutEffect(() => {
-    const handleResize = (entries) => {
+    const handleResize = (entries: ResizeObserverEntry[]) => {
       for (let entry of entries) {
         setWidth(entry.contentRect.width);
       }
