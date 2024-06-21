@@ -10,15 +10,16 @@ export const StyledGalleryWrapper = styled.div`
 export const StyledGalleryGallery = styled.div<{ ref: ReactRef }>`
   display: flex;
   align-items: center;
-  gap: 2rem;
   flex-wrap: nowrap;
-  height: 100vh;
   flex-shrink: 0;
+  gap: 2rem;
+  height: 100vh;
+  width: auto;
 `;
 
 export const StyledGalleryFigure = styled.figure`
   height: 90%;
-  min-width: 20vw;
+  width: auto;
 `;
 
 export const StyledGalleryImage = styled.img`
