@@ -1,4 +1,4 @@
-import { gsap, useGSAP } from "../helpers/gsap";
+import { gsap, useGSAP, ScrollTrigger } from "../helpers/gsap";
 import SplitType from "split-type";
 
 import { Container } from "../components/Container/Container";
@@ -57,6 +57,8 @@ const Projects = () => {
   useLenis();
 
   useGSAP(() => {
+    ScrollTrigger.refresh();
+
     projects.map((elm) => {
       // Title fade animation
       const projectTitle = new SplitType(`#${PROJECT_TITLE_PREFIX}_${elm.id}`, {

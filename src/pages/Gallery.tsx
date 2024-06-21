@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { gsap, useGSAP, ScrollTrigger } from "../helpers/gsap";
+import { useParams } from "react-router-dom";
 import { useLenis } from "../hooks/useLenis";
 
 import {
@@ -10,8 +11,10 @@ import {
 } from "../components/Gallery/Gallery.styled";
 import { Container } from "../components/Container/Container";
 import { Navbar } from "../components/Navbar/Navbar";
+import { gallery } from "../constants/gallery";
 
 const Gallery = () => {
+  let { id } = useParams();
   const galleryRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
 
@@ -43,6 +46,8 @@ const Gallery = () => {
     () => {
       let mm = gsap.matchMedia();
 
+      ScrollTrigger.refresh();
+
       mm.add("(min-width: 1024px)", () => {
         const tween = gsap.to(galleryRef.current, {
           x: getScrollAmount,
@@ -71,15 +76,12 @@ const Gallery = () => {
       <Navbar hideOnScroll={false} />
       <StyledGalleryWrapper className="gallery-wrapper">
         <StyledGalleryGallery ref={galleryRef}>
-          <StyledGalleryFigure>
-            <StyledGalleryImage src="/gallery/buque/buque_1.jpg" />
-          </StyledGalleryFigure>
-          <StyledGalleryFigure>
-            <StyledGalleryImage src="/gallery/buque/buque_2.jpg" />
-          </StyledGalleryFigure>
-          <StyledGalleryFigure>
-            <StyledGalleryImage src="/gallery/buque/buque_2.jpg" />
-          </StyledGalleryFigure>
+          {id &&
+            gallery[id].map((elm: string) => (
+              <StyledGalleryFigure key={elm}>
+                <StyledGalleryImage src={elm} />
+              </StyledGalleryFigure>
+            ))}
         </StyledGalleryGallery>
       </StyledGalleryWrapper>
     </Container>
