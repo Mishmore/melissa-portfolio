@@ -37,8 +37,6 @@ const Gallery = () => {
       ease: "none",
     });
 
-    ScrollTrigger.clearScrollMemory();
-
     ScrollTrigger.create({
       trigger: carouselRef.current,
       start: "center center",
@@ -52,15 +50,14 @@ const Gallery = () => {
     ScrollTrigger.refresh();
 
     return () => {
+      window.history.scrollRestoration = "manual";
       ScrollTrigger.clearScrollMemory();
-      ScrollTrigger.refresh();
     };
   }, []);
 
   // Update scroll once view is loaded to show scrollbar
   useLayoutEffect(() => {
     setTimeout(() => {
-      ScrollTrigger.clearScrollMemory();
       ScrollTrigger.refresh();
     }, 100);
   }, []);

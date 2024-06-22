@@ -17,7 +17,7 @@ import Orvay from "../assets/projects-page/orvay_4.jpg";
 import PerfectStorm from "../assets/projects-page/perfect_storm_1.jpg";
 
 import { ProjectImage } from "../components/Projects/ProjectImage";
-import { useLenis } from "../hooks/useLenis";
+// import { useLenis } from "../hooks/useLenis";
 import { useNavigate } from "react-router-dom";
 import { useLayoutEffect } from "react";
 
@@ -55,7 +55,7 @@ const projects = [
 const Projects = () => {
   const navigate = useNavigate();
 
-  useLenis();
+  // useLenis();
 
   useGSAP(() => {
     projects.map((elm) => {
@@ -87,8 +87,6 @@ const Projects = () => {
         }
       );
 
-      ScrollTrigger.clearScrollMemory();
-
       ScrollTrigger.create({
         trigger: figureTarget,
         start: "top 90%",
@@ -98,20 +96,18 @@ const Projects = () => {
     });
 
     return () => {
+      window.history.scrollRestoration = "manual";
       ScrollTrigger.clearScrollMemory();
-      ScrollTrigger.refresh();
     };
   });
 
   const openProject = (id: string) => {
-    ScrollTrigger.clearScrollMemory();
     navigate(id);
   };
 
   // Update scroll once view is loaded to show scrollbar
   useLayoutEffect(() => {
     setTimeout(() => {
-      ScrollTrigger.clearScrollMemory();
       ScrollTrigger.refresh();
     }, 100);
   }, []);
