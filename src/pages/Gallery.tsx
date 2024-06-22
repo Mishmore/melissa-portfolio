@@ -46,29 +46,27 @@ const Gallery = () => {
     () => {
       let mm = gsap.matchMedia();
 
-      ScrollTrigger.refresh();
-
       mm.add("(min-width: 1024px)", () => {
         const tween = gsap.to(galleryRef.current, {
           x: getScrollAmount,
           duration: 3,
           ease: "none",
+          y: 0,
         });
 
-        ScrollTrigger.create({
+        const st = ScrollTrigger.create({
           trigger: ".gallery-wrapper",
           start: "top top",
           end: () => `+=${getScrollAmount() * -1}`,
-          pin: true,
+          pin: ".gallery-wrapper",
           scrub: 1,
           animation: tween,
           invalidateOnRefresh: true,
         });
-      });
 
-      return () => {
-        ScrollTrigger.killAll();
-      };
+        st.scroll(0);
+        st.refresh();
+      });
     },
     { dependencies: [width, window.innerWidth] }
   );
@@ -78,6 +76,7 @@ const Gallery = () => {
   return (
     <Container>
       <Navbar />
+
       <StyledGalleryWrapper className="gallery-wrapper">
         <StyledGalleryGallery ref={galleryRef}>
           {id &&

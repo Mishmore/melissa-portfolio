@@ -57,8 +57,6 @@ const Projects = () => {
   useLenis();
 
   useGSAP(() => {
-    ScrollTrigger.refresh();
-
     projects.map((elm) => {
       // Title fade animation
       const projectTitle = new SplitType(`#${PROJECT_TITLE_PREFIX}_${elm.id}`, {
@@ -88,17 +86,16 @@ const Projects = () => {
         }
       );
 
-      ScrollTrigger.create({
+      const st = ScrollTrigger.create({
         trigger: figureTarget,
         start: "top 90%",
         animation: animation,
         toggleActions: "restart none resume reset",
       });
-    });
 
-    return () => {
-      ScrollTrigger.killAll();
-    };
+      st.scroll(0);
+      st.refresh();
+    });
   });
 
   const openProject = (id: string) => {
