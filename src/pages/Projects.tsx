@@ -17,7 +17,8 @@ import Orvay from "../assets/projects-page/orvay_4.jpg";
 import PerfectStorm from "../assets/projects-page/perfect_storm_1.jpg";
 
 import { ProjectImage } from "../components/Projects/ProjectImage";
-// import { useLenis } from "../hooks/useLenis";
+import { useLenis } from "../hooks/useLenis";
+import Lenis from "lenis";
 import { useNavigate } from "react-router-dom";
 import { useLayoutEffect } from "react";
 
@@ -55,7 +56,7 @@ const projects = [
 const Projects = () => {
   const navigate = useNavigate();
 
-  // useLenis();
+  const { lenis } = useLenis();
 
   useGSAP(() => {
     projects.map((elm) => {
@@ -98,6 +99,7 @@ const Projects = () => {
     return () => {
       window.history.scrollRestoration = "manual";
       ScrollTrigger.clearScrollMemory();
+      lenis.scrollTo(0);
     };
   });
 
