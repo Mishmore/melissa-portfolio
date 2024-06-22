@@ -1,4 +1,4 @@
-import { gsap, useGSAP, Observer } from "../../helpers/gsap";
+import { gsap, useGSAP } from "../../helpers/gsap";
 
 import {
   PAHT_ABOUT,
@@ -14,11 +14,7 @@ import {
 } from "./Navbar.styled";
 import { useRef } from "react";
 
-interface Navbar {
-  hideOnScroll?: boolean;
-}
-
-export const Navbar = ({ hideOnScroll = true }: Navbar) => {
+export const Navbar = () => {
   const { contextSafe } = useGSAP();
   const navRef = useRef<HTMLElement>(null);
 
@@ -40,35 +36,6 @@ export const Navbar = ({ hideOnScroll = true }: Navbar) => {
         duration: 1,
       }
     );
-  });
-
-  useGSAP(() => {
-    if (hideOnScroll) {
-      Observer.create({
-        id: "navbar-scroll",
-        target: window,
-        type: "wheel",
-        onUp: () => {
-          if (navRef?.current) {
-            gsap.to(navRef.current, {
-              y: 0,
-              position: "fixed",
-              ease: "power3.out",
-              duration: 0.8,
-            });
-          }
-        },
-        onDown: () => {
-          if (navRef?.current) {
-            gsap.to(navRef.current, {
-              y: "-100%",
-              ease: "power3.out",
-              duration: 0.8,
-            });
-          }
-        },
-      });
-    }
   });
 
   return (

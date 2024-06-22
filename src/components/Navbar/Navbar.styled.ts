@@ -7,14 +7,14 @@ export const StyledNavbar = styled.nav`
   gap: 4rem;
   align-items: center;
   z-index: 10;
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
 
   background-color: ${(props) => props.theme.beigeAlpha};
   border-bottom: ${(props) => props.theme.darkBeige} solid 1px;
-  backdrop-filter: blur(2rem);
-  -webkit-backdrop-filter: blur(2rem);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: ${(props) => props.theme.brownGray};
 `;
 

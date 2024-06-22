@@ -72,8 +72,9 @@ const Projects = () => {
       gsap.effects.textLeftIn(projectTitle.lines);
 
       // Project figure fade animation
-      gsap.fromTo(
-        `#${PROJECT_FIGURE_PREFIX}_${elm.id}`,
+      const figureTarget = `#${PROJECT_FIGURE_PREFIX}_${elm.id}`;
+      const animation = gsap.fromTo(
+        figureTarget,
         {
           opacity: 0,
           y: "4vw",
@@ -84,14 +85,20 @@ const Projects = () => {
           delay: 0.2,
           y: 0,
           ease: "power4.out",
-          scrollTrigger: {
-            trigger: `#${PROJECT_FIGURE_PREFIX}_${elm.id}`,
-            start: "top 90%",
-            toggleActions: "restart none resume reset",
-          },
         }
       );
+
+      ScrollTrigger.create({
+        trigger: figureTarget,
+        start: "top 90%",
+        animation: animation,
+        toggleActions: "restart none resume reset",
+      });
     });
+
+    return () => {
+      ScrollTrigger.killAll();
+    };
   });
 
   const openProject = (id: string) => {

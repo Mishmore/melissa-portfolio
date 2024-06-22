@@ -65,6 +65,10 @@ const Gallery = () => {
           invalidateOnRefresh: true,
         });
       });
+
+      return () => {
+        ScrollTrigger.killAll();
+      };
     },
     { dependencies: [width, window.innerWidth] }
   );
@@ -73,7 +77,7 @@ const Gallery = () => {
 
   return (
     <Container>
-      <Navbar hideOnScroll={false} />
+      <Navbar />
       <StyledGalleryWrapper className="gallery-wrapper">
         <StyledGalleryGallery ref={galleryRef}>
           {id &&
