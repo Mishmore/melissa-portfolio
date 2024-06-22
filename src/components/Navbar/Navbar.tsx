@@ -12,11 +12,9 @@ import {
   StyledNavbar,
   StyledNavlink,
 } from "./Navbar.styled";
-import { useRef } from "react";
 
 export const Navbar = () => {
   const { contextSafe } = useGSAP();
-  const navRef = useRef<HTMLElement>(null);
 
   const navOptions = [
     { path: PAHT_PROJECTS, title: "Projects" },
@@ -39,7 +37,7 @@ export const Navbar = () => {
   });
 
   return (
-    <StyledNavbar ref={navRef}>
+    <StyledNavbar>
       <StyledLogoWrapper>
         <StyledLogo
           to={PAHT_HOME}

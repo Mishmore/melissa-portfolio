@@ -6,9 +6,10 @@ import { gallery } from "../constants/gallery";
 
 import {
   StyledGallery,
+  StyledGalleryFigure,
   StyledGalleryImg,
+  StyledGalleryWrapper,
 } from "../components/Gallery/Gallery.styled";
-import { Container } from "../components/Container/Container";
 import { Navbar } from "../components/Navbar/Navbar";
 
 const Gallery = () => {
@@ -20,6 +21,16 @@ const Gallery = () => {
       if (!carouselRef.current?.scrollWidth) return 0;
       return -(carouselRef.current?.scrollWidth - window.innerWidth);
     };
+
+    gsap.utils.toArray<Element>(".gallery-img").map((img) => {
+      gsap.from(img, {
+        opacity: 0,
+        duration: 3,
+        delay: 0.2,
+        stagger: 1,
+        ease: "power4.out",
+      });
+    });
 
     const tween = gsap.to(carouselRef.current, {
       x: getScrollAmount,
@@ -46,23 +57,27 @@ const Gallery = () => {
     };
   }, []);
 
+  // Update scroll once view is loaded to show scrollbar
   useLayoutEffect(() => {
     setTimeout(() => {
+      ScrollTrigger.clearScrollMemory();
       ScrollTrigger.refresh();
     }, 100);
   }, []);
 
   return (
-    <Container>
+    <StyledGalleryWrapper>
       <Navbar />
 
       <StyledGallery ref={carouselRef}>
         {id &&
           gallery[id].map((elm: string) => (
-            <StyledGalleryImg src={elm} key={elm} />
+            <StyledGalleryFigure key={elm}>
+              <StyledGalleryImg src={elm} className="gallery-img" />
+            </StyledGalleryFigure>
           ))}
       </StyledGallery>
-    </Container>
+    </StyledGalleryWrapper>
   );
 };
 

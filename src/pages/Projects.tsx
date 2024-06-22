@@ -19,6 +19,7 @@ import PerfectStorm from "../assets/projects-page/perfect_storm_1.jpg";
 import { ProjectImage } from "../components/Projects/ProjectImage";
 import { useLenis } from "../hooks/useLenis";
 import { useNavigate } from "react-router-dom";
+import { useLayoutEffect } from "react";
 
 const PROJECT_TITLE_PREFIX = "project_title";
 const PROJECT_FIGURE_PREFIX = "project_figure";
@@ -106,6 +107,14 @@ const Projects = () => {
     ScrollTrigger.clearScrollMemory();
     navigate(id);
   };
+
+  // Update scroll once view is loaded to show scrollbar
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      ScrollTrigger.clearScrollMemory();
+      ScrollTrigger.refresh();
+    }, 100);
+  }, []);
 
   return (
     <Container>
