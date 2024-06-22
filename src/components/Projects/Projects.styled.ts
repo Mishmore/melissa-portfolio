@@ -25,7 +25,7 @@ export const StyledProjectTitle = styled.p<{ id: string }>`
 `;
 
 export const StyledContainer = styled.div`
-  background-color: ${(props) => props.theme.brown};
+  background-color: ${(props) => props.theme.lightGray};
   height: 280vw;
 
   ${SytledProjectWrapper}:nth-child(1) {

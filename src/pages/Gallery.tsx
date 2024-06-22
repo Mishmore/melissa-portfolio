@@ -1,92 +1,67 @@
-import { useLayoutEffect, useRef, useState } from "react";
-import { gsap, useGSAP, ScrollTrigger } from "../helpers/gsap";
+import { useLayoutEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
-import { useLenis } from "../hooks/useLenis";
+import { gsap, useGSAP, ScrollTrigger } from "../helpers/gsap";
+
+import { gallery } from "../constants/gallery";
 
 import {
-  StyledGalleryFigure,
-  StyledGalleryGallery,
-  StyledGalleryImage,
-  StyledGalleryWrapper,
+  StyledGallery,
+  StyledGalleryImg,
 } from "../components/Gallery/Gallery.styled";
 import { Container } from "../components/Container/Container";
 import { Navbar } from "../components/Navbar/Navbar";
-import { gallery } from "../constants/gallery";
 
 const Gallery = () => {
   let { id } = useParams();
-  const galleryRef = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    const handleResize = (entries: ResizeObserverEntry[]) => {
-      for (let entry of entries) {
-        setWidth(entry.contentRect.width);
-      }
+  useGSAP(() => {
+    const getScrollAmount = (): number => {
+      if (!carouselRef.current?.scrollWidth) return 0;
+      return -(carouselRef.current?.scrollWidth - window.innerWidth);
     };
 
-    const resizeObserver = new ResizeObserver(handleResize);
+    const tween = gsap.to(carouselRef.current, {
+      x: getScrollAmount,
+      ease: "none",
+    });
 
-    if (galleryRef.current) {
-      resizeObserver.observe(galleryRef.current);
-    }
+    ScrollTrigger.clearScrollMemory();
+
+    ScrollTrigger.create({
+      trigger: carouselRef.current,
+      start: "center center",
+      end: () => `+=${getScrollAmount() * -1}`,
+      pin: carouselRef.current,
+      scrub: 1,
+      animation: tween,
+      invalidateOnRefresh: true,
+    });
+
+    ScrollTrigger.refresh();
 
     return () => {
-      if (galleryRef.current) {
-        resizeObserver.unobserve(galleryRef.current);
-      }
+      ScrollTrigger.clearScrollMemory();
+      ScrollTrigger.refresh();
     };
   }, []);
 
-  const getScrollAmount = () => {
-    return -(width - window.innerWidth);
-  };
-
-  useGSAP(
-    () => {
-      let mm = gsap.matchMedia();
-
-      mm.add("(min-width: 1024px)", () => {
-        const tween = gsap.to(galleryRef.current, {
-          x: getScrollAmount,
-          duration: 3,
-          ease: "none",
-          y: 0,
-        });
-
-        const st = ScrollTrigger.create({
-          trigger: ".gallery-wrapper",
-          start: "top top",
-          end: () => `+=${getScrollAmount() * -1}`,
-          pin: ".gallery-wrapper",
-          scrub: 1,
-          animation: tween,
-          invalidateOnRefresh: true,
-        });
-
-        st.scroll(0);
-        st.refresh();
-      });
-    },
-    { dependencies: [width, window.innerWidth] }
-  );
-
-  useLenis();
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+  }, []);
 
   return (
     <Container>
       <Navbar />
 
-      <StyledGalleryWrapper className="gallery-wrapper">
-        <StyledGalleryGallery ref={galleryRef}>
-          {id &&
-            gallery[id].map((elm: string) => (
-              <StyledGalleryFigure key={elm}>
-                <StyledGalleryImage src={elm} />
-              </StyledGalleryFigure>
-            ))}
-        </StyledGalleryGallery>
-      </StyledGalleryWrapper>
+      <StyledGallery ref={carouselRef}>
+        {id &&
+          gallery[id].map((elm: string) => (
+            <StyledGalleryImg src={elm} key={elm} />
+          ))}
+      </StyledGallery>
     </Container>
   );
 };

@@ -4,6 +4,8 @@ const theme = {
   darkBeige: "#C0BAAB",
   brownGray: "#44413a",
   brown: "#826652",
+  lightGray: "#D9D7D4",
+  softGreen: "#BBB18E",
 };
 
 export default theme;

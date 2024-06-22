@@ -86,19 +86,24 @@ const Projects = () => {
         }
       );
 
-      const st = ScrollTrigger.create({
+      ScrollTrigger.clearScrollMemory();
+
+      ScrollTrigger.create({
         trigger: figureTarget,
         start: "top 90%",
         animation: animation,
         toggleActions: "restart none resume reset",
       });
-
-      st.scroll(0);
-      st.refresh();
     });
+
+    return () => {
+      ScrollTrigger.clearScrollMemory();
+      ScrollTrigger.refresh();
+    };
   });
 
   const openProject = (id: string) => {
+    ScrollTrigger.clearScrollMemory();
     navigate(id);
   };
 
