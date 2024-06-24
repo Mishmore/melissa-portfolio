@@ -7,7 +7,7 @@ export const StyledHero = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: 1;
-  background-color: ${(props) => props.theme.beige};
+  background-color: ${(props) => props.theme.homeBg};
 `;
 
 export const StyledHeroWrapper = styled.div`

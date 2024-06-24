@@ -11,11 +11,11 @@ export const StyledNavbar = styled.nav`
   width: 100%;
   top: 0;
 
-  background-color: ${(props) => props.theme.beigeAlpha};
-  border-bottom: ${(props) => props.theme.darkBeige} solid 1px;
+  background-color: ${(props) => props.theme.navbarBg};
+  border-bottom: ${(props) => props.theme.navbarStroke} solid 1px;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  color: ${(props) => props.theme.brownGray};
+  color: ${(props) => props.theme.text};
 `;
 
 export const StyledLogoWrapper = styled.div`

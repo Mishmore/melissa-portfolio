@@ -17,7 +17,7 @@ export const StyledProjectImage = styled.img`
 `;
 
 export const StyledProjectTitle = styled.p<{ id: string }>`
-  color: ${(props) => props.theme.brownGray};
+  color: ${(props) => props.theme.text};
   font-size: 4vw;
   position: absolute;
   max-width: 20vw;
@@ -25,7 +25,7 @@ export const StyledProjectTitle = styled.p<{ id: string }>`
 `;
 
 export const StyledContainer = styled.div`
-  background-color: ${(props) => props.theme.lightGray};
+  background-color: ${(props) => props.theme.defaultBg};
   height: 280vw;
 
   ${SytledProjectWrapper}:nth-child(1) {

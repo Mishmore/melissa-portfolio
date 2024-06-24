@@ -3,7 +3,7 @@ import styled from "styled-components";
 const galleryPadding = "1vw";
 
 export const StyledGalleryWrapper = styled.div`
-  background-color: ${(props) => props.theme.softGreen};
+  background-color: ${(props) => props.theme.defaultBg};
 `;
 
 export const StyledGallery = styled.div`
