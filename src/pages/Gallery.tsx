@@ -1,6 +1,7 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { gsap, useGSAP, ScrollTrigger } from "../helpers/gsap";
+import { useLenis } from "lenis/react";
 
 import { gallery } from "../constants/gallery";
 
@@ -15,6 +16,7 @@ import { Navbar } from "../components/Navbar/Navbar";
 const Gallery = () => {
   let { id } = useParams();
   const carouselRef = useRef<HTMLDivElement>(null);
+  const lenis = useLenis(ScrollTrigger.update);
 
   useGSAP(() => {
     const getScrollAmount = (): number => {
@@ -22,14 +24,12 @@ const Gallery = () => {
       return -(carouselRef.current?.scrollWidth - window.innerWidth);
     };
 
-    gsap.utils.toArray<Element>(".gallery-img").map((img) => {
-      gsap.from(img, {
-        opacity: 0,
-        duration: 3,
-        delay: 0.2,
-        stagger: 1,
-        ease: "power4.out",
-      });
+    gsap.from(".gallery-img", {
+      opacity: 0,
+      duration: 1.5,
+      delay: 0.5,
+      stagger: 0.2,
+      ease: "power1.out",
     });
 
     const tween = gsap.to(carouselRef.current, {
@@ -47,13 +47,12 @@ const Gallery = () => {
       invalidateOnRefresh: true,
     });
 
-    ScrollTrigger.refresh();
-
     return () => {
-      window.history.scrollRestoration = "manual";
-      ScrollTrigger.clearScrollMemory();
+      lenis?.scrollTo(0, { force: true, immediate: true });
     };
-  }, []);
+  });
+
+  useEffect(() => ScrollTrigger.refresh(), [lenis]);
 
   // Update scroll once view is loaded to show scrollbar
   useLayoutEffect(() => {

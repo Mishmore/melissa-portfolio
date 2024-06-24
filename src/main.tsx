@@ -3,12 +3,14 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
+import theme from "./theme.ts";
 import Home from "./pages/Home.tsx";
 import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";
-import theme from "./theme.ts";
 import Projects from "./pages/Projects.tsx";
 import Gallery from "./pages/Gallery.tsx";
+
+import { SmoothScrollWrapper } from "./components/SmoothScrollWrapper/SmoothScrollWrapper.tsx";
 
 import {
   PAHT_ABOUT,
@@ -43,6 +45,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <ThemeProvider theme={theme}>
-    <RouterProvider router={router} />
+    <SmoothScrollWrapper>
+      <RouterProvider router={router} />
+    </SmoothScrollWrapper>
   </ThemeProvider>
 );

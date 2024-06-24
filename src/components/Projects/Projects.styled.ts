@@ -17,11 +17,11 @@ export const StyledProjectImage = styled.img`
 `;
 
 export const StyledProjectTitle = styled.p<{ id: string }>`
-  color: ${(props) => props.theme.beige};
+  color: ${(props) => props.theme.brownGray};
   font-size: 4vw;
   position: absolute;
   max-width: 20vw;
-  line-height: 0.9;
+  line-height: 1.2;
 `;
 
 export const StyledContainer = styled.div`

@@ -13,6 +13,9 @@ import { Observer } from "gsap/Observer";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin, Draggable, Observer);
 
+window.history.scrollRestoration = "manual";
+ScrollTrigger.clearScrollMemory("manual");
+
 gsap.registerEffect({
   name: "textSwipeIn",
   effect: (targets: gsap.DOMTarget) =>
