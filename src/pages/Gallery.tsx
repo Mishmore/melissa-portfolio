@@ -59,7 +59,7 @@ const Gallery = () => {
     setTimeout(() => {
       console.log("refresh");
       ScrollTrigger.refresh();
-    }, 100);
+    }, 1000);
   }, []);
 
   return (

@@ -19,9 +19,15 @@ export const StyledProjectImage = styled.img`
 export const StyledProjectTitle = styled.p<{ id: string }>`
   color: ${(props) => props.theme.text};
   font-size: 4vw;
+  font-weight: 500;
   position: absolute;
   max-width: 20vw;
   line-height: 1.2;
+
+  div::selection {
+    background: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.defaultBg};
+  }
 `;
 
 export const StyledContainer = styled.div`
@@ -44,52 +50,52 @@ export const StyledContainer = styled.div`
   ${SytledProjectWrapper}:nth-child(2) {
     ${StyledProjectFigure} {
       width: 33vw;
-      top: 68vw;
+      top: 60vw;
       right: 8vw;
     }
 
     ${StyledProjectTitle} {
-      top: 100vw;
+      top: 90vw;
       left: 40vw;
     }
   }
 
   ${SytledProjectWrapper}:nth-child(3) {
     ${StyledProjectFigure} {
-      width: 50vw;
-      top: 130vw;
+      width: 40vw;
+      top: 111vw;
       left: 8vw;
     }
 
     ${StyledProjectTitle} {
-      top: 145vw;
-      left: 63vw;
+      top: 130vw;
+      left: 52vw;
     }
   }
 
   ${SytledProjectWrapper}:nth-child(4) {
     ${StyledProjectFigure} {
-      width: 40vw;
-      top: 180vw;
-      left: 8vw;
+      width: 33vw;
+      top: 165vw;
+      right: 8vw;
     }
 
     ${StyledProjectTitle} {
-      top: 205vw;
-      left: 52vw;
+      top: 189vw;
+      left: 40vw;
     }
   }
 
   ${SytledProjectWrapper}:nth-child(5) {
     ${StyledProjectFigure} {
-      width: 33vw;
-      top: 230vw;
-      right: 8vw;
+      width: 40vw;
+      top: 211vw;
+      left: 8vw;
     }
 
     ${StyledProjectTitle} {
       top: 240vw;
-      left: 38vw;
+      left: 53vw;
     }
   }
 `;

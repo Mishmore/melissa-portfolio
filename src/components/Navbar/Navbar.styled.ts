@@ -37,9 +37,10 @@ export const StyledNavlink = styled(NavLink)`
   font-size: 2rem;
   min-width: 8rem;
   text-align: center;
+  font-weight: 500;
 
   &::selection {
-    background: #000;
-    color: #fff;
+    background: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.defaultBg};
   }
 `;
