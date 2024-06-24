@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const galleryPadding = "2vw";
+const galleryPadding = "1vw";
 
 export const StyledGalleryWrapper = styled.div`
   background-color: ${(props) => props.theme.softGreen};
