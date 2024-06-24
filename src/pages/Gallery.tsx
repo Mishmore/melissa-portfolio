@@ -57,6 +57,7 @@ const Gallery = () => {
   // Update scroll once view is loaded to show scrollbar
   useLayoutEffect(() => {
     setTimeout(() => {
+      console.log("refresh");
       ScrollTrigger.refresh();
     }, 100);
   }, []);
