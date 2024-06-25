@@ -11,12 +11,15 @@ import {
   StyledLogo,
   StyledLogoWrapper,
   StyledMenuButton,
+  StyledMenuMobile,
   StyledNavbar,
   StyledNavlink,
 } from "./Navbar.styled";
+import { useState } from "react";
 
 export const Navbar = () => {
   const { contextSafe } = useGSAP();
+  const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 
   const isMobile = useMediaQuery("only screen and (max-width: 1024px)");
 
@@ -40,33 +43,50 @@ export const Navbar = () => {
     );
   });
 
+  const toggleMenu = () => {
+    setMenuOpen((boolean) => !boolean);
+  };
+
   return (
-    <StyledNavbar>
-      <StyledLogoWrapper>
-        <StyledLogo
-          to={PAHT_HOME}
-          id="logo"
-          onMouseEnter={() => onMouseEnter("Melissa More", "logo")}
-        >
-          MELISSA MORE
-        </StyledLogo>
-      </StyledLogoWrapper>
-      {!isMobile && (
-        <>
+    <>
+      <StyledNavbar>
+        <StyledLogoWrapper>
+          <StyledLogo
+            to={PAHT_HOME}
+            id="logo"
+            onMouseEnter={() => onMouseEnter("Melissa More", "logo")}
+          >
+            MELISSA MORE
+          </StyledLogo>
+        </StyledLogoWrapper>
+        {!isMobile && (
+          <>
+            {navOptions.map((elm) => (
+              <StyledNavlink
+                key={elm.title}
+                to={elm.path}
+                id={elm.title}
+                onMouseEnter={() => onMouseEnter(elm.title, elm.title)}
+              >
+                {elm.title}
+              </StyledNavlink>
+            ))}
+          </>
+        )}
+
+        {isMobile && (
+          <StyledMenuButton onClick={toggleMenu}>menu</StyledMenuButton>
+        )}
+      </StyledNavbar>
+      {isMenuOpen && (
+        <StyledMenuMobile>
           {navOptions.map((elm) => (
-            <StyledNavlink
-              key={elm.title}
-              to={elm.path}
-              id={elm.title}
-              onMouseEnter={() => onMouseEnter(elm.title, elm.title)}
-            >
+            <StyledNavlink key={elm.title} to={elm.path} id={elm.title}>
               {elm.title}
             </StyledNavlink>
           ))}
-        </>
+        </StyledMenuMobile>
       )}
-
-      {isMobile && <StyledMenuButton>Menu</StyledMenuButton>}
-    </StyledNavbar>
+    </>
   );
 };

@@ -46,6 +46,7 @@ export const StyledNavlink = styled(NavLink)`
   min-width: 8rem;
   text-align: center;
   font-weight: 500;
+  line-height: 1.2;
 
   &::selection {
     background: ${(props) => props.theme.text};
@@ -53,15 +54,31 @@ export const StyledNavlink = styled(NavLink)`
   }
 
   @media (max-width: ${(props) => props.theme.desktop}) {
-    font-size: 1.6rem;
+    font-size: 3rem;
   }
 `;
 
-export const StyledMenuButton = styled.button``;
+export const StyledMenuButton = styled.button`
+  border: none;
+  background: none;
+  padding: 0;
+  font-weight: 500;
+`;
 
 export const StyledMenuMobile = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 5.3rem);
   position: fixed;
   padding: 1.4rem 1.8rem;
+  background-color: ${(props) => props.theme.navbarBg};
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  left: 0;
+  top: 5.3rem;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.8rem;
+  padding-top: 6rem;
 `;
