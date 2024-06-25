@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const galleryPadding = "2vw";
-const galleryGap = "4vw";
+const galleryPadding = "3rem";
+const galleryGap = "6rem";
 
 export const StyledGalleryWrapper = styled.div`
   background-color: ${(props) => props.theme.defaultBg};
@@ -13,9 +13,8 @@ export const StyledGallery = styled.div`
   gap: ${galleryGap};
   flex-shrink: 0;
   flex-wrap: nowrap;
-  height: 100vh;
-  padding-top: 7rem;
-  padding-top: calc(${galleryPadding} + 7rem);
+  height: calc(100vh - 7rem);
+  padding-top: ${galleryPadding};
   padding-bottom: ${galleryPadding};
   padding-left: ${galleryPadding};
   padding-right: ${galleryPadding};

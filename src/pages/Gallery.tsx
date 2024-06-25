@@ -39,7 +39,7 @@ const Gallery = () => {
 
     ScrollTrigger.create({
       trigger: carouselRef.current,
-      start: "center center",
+      start: "bottom bottom",
       end: () => `+=${getScrollAmount() * -1}`,
       pin: carouselRef.current,
       scrub: 1,
@@ -57,7 +57,6 @@ const Gallery = () => {
   // Update scroll once view is loaded to show scrollbar
   useLayoutEffect(() => {
     setTimeout(() => {
-      console.log("refresh");
       ScrollTrigger.refresh();
     }, 1000);
   }, []);

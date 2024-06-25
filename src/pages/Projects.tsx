@@ -1,7 +1,6 @@
 import { gsap, useGSAP, ScrollTrigger } from "../helpers/gsap";
 import SplitType from "split-type";
 
-import { Container } from "../components/Container/Container";
 import { Navbar } from "../components/Navbar/Navbar";
 import {
   StyledProjectTitle,
@@ -113,9 +112,8 @@ const Projects = () => {
   }, []);
 
   return (
-    <Container>
+    <>
       <Navbar />
-
       <StyledContainer>
         {projects.map((elm) => (
           <SytledProjectWrapper key={elm.title}>
@@ -129,13 +127,14 @@ const Projects = () => {
             <StyledProjectTitle
               id={`${PROJECT_TITLE_PREFIX}_${elm.id}`}
               className="project_title"
+              onClick={() => openProject(elm.id)}
             >
               {elm.title}
             </StyledProjectTitle>
           </SytledProjectWrapper>
         ))}
       </StyledContainer>
-    </Container>
+    </>
   );
 };
 

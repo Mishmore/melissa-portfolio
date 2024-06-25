@@ -7,7 +7,7 @@ export const StyledNavbar = styled.nav`
   gap: 4rem;
   align-items: center;
   z-index: 10;
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
 
@@ -16,6 +16,10 @@ export const StyledNavbar = styled.nav`
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: ${(props) => props.theme.text};
+
+  @media (max-width: ${(props) => props.theme.desktop}) {
+    padding: 1rem;
+  }
 `;
 
 export const StyledLogoWrapper = styled.div`
@@ -29,6 +33,10 @@ export const StyledLogo = styled(NavLink)`
   font-size: 2.2rem;
   font-weight: 500;
   text-transform: lowercase;
+
+  @media (max-width: ${(props) => props.theme.desktop}) {
+    font-size: 1.8rem;
+  }
 `;
 
 export const StyledNavlink = styled(NavLink)`
@@ -42,5 +50,9 @@ export const StyledNavlink = styled(NavLink)`
   &::selection {
     background: ${(props) => props.theme.text};
     color: ${(props) => props.theme.defaultBg};
+  }
+
+  @media (max-width: ${(props) => props.theme.desktop}) {
+    font-size: 1.6rem;
   }
 `;

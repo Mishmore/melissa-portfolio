@@ -19,10 +19,10 @@ export const StyledProjectImage = styled.img`
 export const StyledProjectTitle = styled.p<{ id: string }>`
   color: ${(props) => props.theme.text};
   font-size: 4vw;
-  font-weight: 500;
   position: absolute;
   max-width: 20vw;
   line-height: 1.2;
+  cursor: pointer;
 
   div::selection {
     background: ${(props) => props.theme.text};
@@ -36,7 +36,7 @@ export const StyledContainer = styled.div`
 
   ${SytledProjectWrapper}:nth-child(1) {
     ${StyledProjectFigure} {
-      width: 40vw;
+      width: 38vw;
       top: 12vw;
       left: 8vw;
     }
@@ -49,20 +49,20 @@ export const StyledContainer = styled.div`
 
   ${SytledProjectWrapper}:nth-child(2) {
     ${StyledProjectFigure} {
-      width: 33vw;
+      width: 34vw;
       top: 60vw;
       right: 8vw;
     }
 
     ${StyledProjectTitle} {
       top: 90vw;
-      left: 40vw;
+      left: 38vw;
     }
   }
 
   ${SytledProjectWrapper}:nth-child(3) {
     ${StyledProjectFigure} {
-      width: 40vw;
+      width: 38vw;
       top: 111vw;
       left: 8vw;
     }
@@ -75,7 +75,7 @@ export const StyledContainer = styled.div`
 
   ${SytledProjectWrapper}:nth-child(4) {
     ${StyledProjectFigure} {
-      width: 33vw;
+      width: 36vw;
       top: 165vw;
       right: 8vw;
     }
@@ -88,7 +88,7 @@ export const StyledContainer = styled.div`
 
   ${SytledProjectWrapper}:nth-child(5) {
     ${StyledProjectFigure} {
-      width: 40vw;
+      width: 38vw;
       top: 211vw;
       left: 8vw;
     }
