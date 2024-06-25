@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
-export const SytledProjectWrapper = styled.div``;
+export const SytledProjectWrapper = styled.div`
+  *::selection {
+    background: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.defaultBg};
+  }
+`;
 
 export const StyledProjectFigure = styled.figure`
   position: absolute;
   overflow: hidden;
+  user-select: none;
 
   &:hover {
     cursor: pointer;
@@ -27,11 +33,6 @@ export const StyledProjectTitle = styled.p`
   line-height: 1.1;
   letter-spacing: -0.027em;
   font-weight: 500;
-
-  *::selection {
-    background: ${(props) => props.theme.text};
-    color: ${(props) => props.theme.defaultBg};
-  }
 
   @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 2rem;

@@ -62,6 +62,7 @@ export const StyledAboutFigure = styled.figure`
   top: 50%;
   transform: translateY(-50%);
   left: 3rem;
+  user-select: none;
 
   @media (max-width: ${breakpoints.laptop.small}) {
     width: 100%;
