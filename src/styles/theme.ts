@@ -5,9 +5,6 @@ const theme = {
   homeBg: "#F3F3F3",
   galleryBg: "#BBB18E",
   defaultBg: "#F3F3F3",
-
-  // breakpoints
-  tablet: "768px",
 };
 
 export default theme;
