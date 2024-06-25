@@ -26,7 +26,7 @@ export const StyledContactText = styled.p`
   line-height: 1.2;
 `;
 
-export const StyledContactLink = styled.p`
+export const StyledContactLink = styled.a`
   font-size: 3.5vw;
   line-height: 1.2;
 `;

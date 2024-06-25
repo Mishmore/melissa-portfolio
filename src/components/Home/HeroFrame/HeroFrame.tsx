@@ -1,5 +1,5 @@
 import { MouseEventHandler, useRef } from "react";
-import { gsap, useGSAP } from "../../helpers/gsap";
+import { gsap, useGSAP } from "../../../helpers/gsap";
 
 import {
   StyledHeroFrame,

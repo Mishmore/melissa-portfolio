@@ -18,7 +18,7 @@ export const StyledNavbar = styled.nav`
   color: ${(props) => props.theme.text};
 
   @media (max-width: ${(props) => props.theme.desktop}) {
-    padding: 1rem;
+    padding: 1.4rem 1.8rem;
   }
 `;
 
@@ -35,7 +35,7 @@ export const StyledLogo = styled(NavLink)`
   text-transform: lowercase;
 
   @media (max-width: ${(props) => props.theme.desktop}) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 `;
 
@@ -55,4 +55,13 @@ export const StyledNavlink = styled(NavLink)`
   @media (max-width: ${(props) => props.theme.desktop}) {
     font-size: 1.6rem;
   }
+`;
+
+export const StyledMenuButton = styled.button``;
+
+export const StyledMenuMobile = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  padding: 1.4rem 1.8rem;
 `;

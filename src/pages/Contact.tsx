@@ -6,6 +6,7 @@ import {
   StyledFlex,
 } from "../components/Contact/Contact.styles";
 import { Navbar } from "../components/Navbar/Navbar";
+import { socialMedia } from "../constants/socialMedia";
 
 const Contact = () => {
   return (
@@ -19,8 +20,20 @@ const Contact = () => {
             <StyledContactText>melmore416@gmail.com</StyledContactText>
           </StyledFlex>
           <StyledFlex>
-            <StyledContactLink>Behance</StyledContactLink>
-            <StyledContactLink>Instagram</StyledContactLink>
+            <StyledContactLink
+              href={socialMedia.behance}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Behance
+            </StyledContactLink>
+            <StyledContactLink
+              href={socialMedia.instagram}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Instagram
+            </StyledContactLink>
           </StyledFlex>
         </StyledContactTextWrapper>
       </StyledContactWrapper>

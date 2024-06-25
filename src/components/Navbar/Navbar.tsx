@@ -1,4 +1,5 @@
 import { gsap, useGSAP } from "../../helpers/gsap";
+import { useMediaQuery } from "@uidotdev/usehooks";
 
 import {
   PAHT_ABOUT,
@@ -9,12 +10,15 @@ import {
 import {
   StyledLogo,
   StyledLogoWrapper,
+  StyledMenuButton,
   StyledNavbar,
   StyledNavlink,
 } from "./Navbar.styled";
 
 export const Navbar = () => {
   const { contextSafe } = useGSAP();
+
+  const isMobile = useMediaQuery("only screen and (max-width: 1024px)");
 
   const navOptions = [
     { path: PAHT_PROJECTS, title: "Projects" },
@@ -47,16 +51,22 @@ export const Navbar = () => {
           MELISSA MORE
         </StyledLogo>
       </StyledLogoWrapper>
-      {navOptions.map((elm) => (
-        <StyledNavlink
-          key={elm.title}
-          to={elm.path}
-          id={elm.title}
-          onMouseEnter={() => onMouseEnter(elm.title, elm.title)}
-        >
-          {elm.title}
-        </StyledNavlink>
-      ))}
+      {!isMobile && (
+        <>
+          {navOptions.map((elm) => (
+            <StyledNavlink
+              key={elm.title}
+              to={elm.path}
+              id={elm.title}
+              onMouseEnter={() => onMouseEnter(elm.title, elm.title)}
+            >
+              {elm.title}
+            </StyledNavlink>
+          ))}
+        </>
+      )}
+
+      {isMobile && <StyledMenuButton>Menu</StyledMenuButton>}
     </StyledNavbar>
   );
 };

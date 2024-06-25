@@ -3,7 +3,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
-import theme from "./theme.ts";
+import theme from "./styles/theme.ts";
 import Home from "./pages/Home.tsx";
 import Contact from "./pages/Contact.tsx";
 import About from "./pages/About.tsx";

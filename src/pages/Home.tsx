@@ -1,9 +1,11 @@
 import { useRef } from "react";
 import { gsap, useGSAP, Draggable } from "../helpers/gsap";
 
-import { Container } from "../components/Container/Container";
-import { StyledHero, StyledHeroWrapper } from "../components/Hero/Hero.styled";
-import { HeroFrame } from "../components/HeroFrame/HeroFrame";
+import {
+  StyledHero,
+  StyledHeroWrapper,
+} from "../components/Home/Hero/Hero.styled";
+import { HeroFrame } from "../components/Home/HeroFrame/HeroFrame";
 
 import { projects } from "../constants/homeProjects";
 import { Navbar } from "../components/Navbar/Navbar";
@@ -63,12 +65,12 @@ const Home = () => {
           ease: "power1.out",
           x: `+=${
             getDirection(direction).x != "0"
-              ? `${getDirection(direction).x}random([10,15,20])`
+              ? `${getDirection(direction).x}random([10,15,20,25])`
               : 0
           }`,
           y: `+=${
             getDirection(direction).y != "0"
-              ? `${getDirection(direction).y}random([10,15,20])`
+              ? `${getDirection(direction).y}random([10,15,20,25])`
               : 0
           }`,
         });
@@ -88,23 +90,21 @@ const Home = () => {
   });
 
   return (
-    <>
-      <Container ref={main}>
-        <Navbar />
-        <StyledHero>
-          <StyledHeroWrapper className="hero_wrapper">
-            {projects.map((elm, index) => (
-              <HeroFrame
-                key={elm.description + index}
-                imageUrl={elm.image_url}
-                description={elm.description}
-                styles={elm.css}
-              ></HeroFrame>
-            ))}
-          </StyledHeroWrapper>
-        </StyledHero>
-      </Container>
-    </>
+    <div ref={main}>
+      <Navbar />
+      <StyledHero>
+        <StyledHeroWrapper className="hero_wrapper">
+          {projects.map((elm, index) => (
+            <HeroFrame
+              key={elm.description + index}
+              imageUrl={elm.image_url}
+              description={elm.description}
+              styles={elm.css}
+            ></HeroFrame>
+          ))}
+        </StyledHeroWrapper>
+      </StyledHero>
+    </div>
   );
 };
 
