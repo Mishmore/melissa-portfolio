@@ -12,7 +12,6 @@ import {
   StyledGalleryWrapper,
 } from "../components/Gallery/Gallery.styled";
 import { Navbar } from "../components/Navbar/Navbar";
-import { breakpoints } from "../styles/breakpoints";
 
 const Gallery = () => {
   let { id } = useParams();

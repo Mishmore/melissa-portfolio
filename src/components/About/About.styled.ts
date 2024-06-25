@@ -26,6 +26,8 @@ export const StyledAboutText = styled.p`
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.027em;
+  mix-blend-mode: difference;
+  filter: invert(1);
 
   @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 3.6rem;
@@ -38,7 +40,7 @@ export const StyledAboutPhrase = styled.p`
   position: absolute;
   font-size: 2.8vw;
   left: 58.3vw;
-  top: 60vh;
+  top: 70vh;
 
   @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 2rem;
