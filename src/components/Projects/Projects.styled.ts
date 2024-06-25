@@ -28,7 +28,7 @@ export const StyledProjectTitle = styled.p`
   letter-spacing: -0.027em;
   font-weight: 500;
 
-  div::selection {
+  *::selection {
     background: ${(props) => props.theme.text};
     color: ${(props) => props.theme.defaultBg};
   }

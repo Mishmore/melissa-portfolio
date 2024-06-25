@@ -54,13 +54,14 @@ const Projects = () => {
   useGSAP(() => {
     // Title fade animation
     gsap.utils.toArray<TargetElement>(".project_title").map((elm) => {
-      console.log(elm);
       const projectTitle = new SplitType(elm, {
         types: "words,lines",
       });
 
       gsap.set(projectTitle.lines, {
         fontKerning: "none",
+        x: "-20%",
+        opacity: 0,
       });
 
       gsap.effects.textLeftIn(projectTitle.lines);

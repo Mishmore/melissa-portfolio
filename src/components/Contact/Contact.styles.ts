@@ -6,6 +6,11 @@ export const StyledContactWrapper = styled.div`
   height: calc(100vh - 7rem);
   min-height: 70rem;
 
+  *::selection {
+    background: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.defaultBg};
+  }
+
   @media (max-width: ${breakpoints.laptop.small}) {
     height: calc(100vh - 5.3rem);
     min-height: fit-content;

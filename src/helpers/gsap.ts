@@ -44,25 +44,18 @@ gsap.registerEffect({
 gsap.registerEffect({
   name: "textLeftIn",
   effect: (targets: gsap.DOMTarget) =>
-    gsap.fromTo(
-      targets,
-      {
-        x: "-20%",
-        opacity: 0,
+    gsap.to(targets, {
+      x: 0,
+      opacity: 1,
+      stagger: 0.2,
+      duration: 2,
+      delay: 0.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: targets,
+        start: "top bottom",
+        toggleActions: "restart none resume reset",
       },
-      {
-        x: 0,
-        opacity: 1,
-        stagger: 0.2,
-        duration: 2,
-        delay: 0.5,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: targets,
-          start: "top bottom",
-          toggleActions: "restart none resume reset",
-        },
-      }
-    ),
+    }),
   extendTimeline: true,
 });

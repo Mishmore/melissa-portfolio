@@ -5,6 +5,11 @@ export const StyledAboutContainer = styled.div`
   background-color: ${(props) => props.theme.defaultBg};
   height: calc(100vh - 7rem);
 
+  *::selection {
+    background: ${(props) => props.theme.text};
+    color: ${(props) => props.theme.defaultBg};
+  }
+
   @media (max-width: ${breakpoints.laptop.small}) {
     min-height: calc(100vh - 5.3rem);
     height: auto;
