@@ -1,5 +1,8 @@
+import { useEffect, useLayoutEffect } from "react";
+import { useLenis } from "lenis/react";
+import { useNavigate } from "react-router-dom";
+import SplitType, { TargetElement } from "split-type";
 import { gsap, useGSAP, ScrollTrigger } from "../helpers/gsap";
-import SplitType from "split-type";
 
 import { Navbar } from "../components/Navbar/Navbar";
 import {
@@ -8,20 +11,13 @@ import {
   SytledProjectWrapper,
   StyledProjectFigure,
 } from "../components/Projects/Projects.styled";
+import { ProjectImage } from "../components/Projects/ProjectImage";
 
 import Buque from "../assets/projects-page/buque_1.jpg";
 import CafeConBorges from "../assets/projects-page/cafe_con_borges_1.jpg";
 import HaumsInWald from "../assets/projects-page/haums_im_wald_1.jpg";
 import Orvay from "../assets/projects-page/orvay_5.jpg";
 import PerfectStorm from "../assets/projects-page/perfect_storm_1.jpg";
-
-import { ProjectImage } from "../components/Projects/ProjectImage";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useLayoutEffect } from "react";
-import { useLenis } from "lenis/react";
-
-const PROJECT_TITLE_PREFIX = "project_title";
-const PROJECT_FIGURE_PREFIX = "project_figure";
 
 const projects = [
   {
@@ -56,9 +52,10 @@ const Projects = () => {
   const lenis = useLenis(ScrollTrigger.update);
 
   useGSAP(() => {
-    projects.map((elm) => {
-      // Title fade animation
-      const projectTitle = new SplitType(`#${PROJECT_TITLE_PREFIX}_${elm.id}`, {
+    // Title fade animation
+    gsap.utils.toArray<TargetElement>(".project_title").map((elm) => {
+      console.log(elm);
+      const projectTitle = new SplitType(elm, {
         types: "words,lines",
       });
 
@@ -67,31 +64,34 @@ const Projects = () => {
       });
 
       gsap.effects.textLeftIn(projectTitle.lines);
-
-      // Project figure fade animation
-      const figureTarget = `#${PROJECT_FIGURE_PREFIX}_${elm.id}`;
-      const animation = gsap.fromTo(
-        figureTarget,
-        {
-          opacity: 0,
-          y: "4vw",
-        },
-        {
-          duration: 3,
-          opacity: 1,
-          delay: 0.2,
-          y: 0,
-          ease: "power4.out",
-        }
-      );
-
-      ScrollTrigger.create({
-        trigger: figureTarget,
-        start: "top 90%",
-        animation: animation,
-        toggleActions: "restart none resume reset",
-      });
     });
+
+    gsap.utils
+      .toArray<gsap.DOMTarget>(".project_figure")
+      .map((figureTarget) => {
+        // Project figure fade animation
+        const animation = gsap.fromTo(
+          figureTarget,
+          {
+            opacity: 0,
+            y: "4vw",
+          },
+          {
+            duration: 3,
+            opacity: 1,
+            delay: 0.2,
+            y: 0,
+            ease: "power4.out",
+          }
+        );
+
+        ScrollTrigger.create({
+          trigger: figureTarget,
+          start: "top 90%",
+          animation: animation,
+          toggleActions: "restart none resume reset",
+        });
+      });
 
     return () => {
       lenis?.scrollTo(0, { force: true, immediate: true });
@@ -119,13 +119,11 @@ const Projects = () => {
           <SytledProjectWrapper key={elm.title}>
             <StyledProjectFigure
               className="project_figure"
-              id={`${PROJECT_FIGURE_PREFIX}_${elm.id}`}
               onClick={() => openProject(elm.id)}
             >
               <ProjectImage src={elm.image} />
             </StyledProjectFigure>
             <StyledProjectTitle
-              id={`${PROJECT_TITLE_PREFIX}_${elm.id}`}
               className="project_title"
               onClick={() => openProject(elm.id)}
             >

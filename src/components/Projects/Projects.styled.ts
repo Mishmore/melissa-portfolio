@@ -17,7 +17,7 @@ export const StyledProjectImage = styled.img`
   height: 100%;
 `;
 
-export const StyledProjectTitle = styled.p<{ id: string }>`
+export const StyledProjectTitle = styled.p`
   color: ${(props) => props.theme.text};
   font-size: 3.5vw;
   position: absolute;
