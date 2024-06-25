@@ -17,9 +17,8 @@ const About = () => {
           <StyledAboutImg src={AboutImg} alt="Melissa's picture" />
         </StyledAboutFigure>
         <StyledAboutText>
-          Hi, I am <span id="text-melissa">Melissa,</span> an interior <br />
-          designer turned archviz artist
-          <br /> that loves creating images.
+          Hi, I am <span id="text-melissa">Melissa,</span> an interior designer
+          turned archviz artist that loves creating images.
         </StyledAboutText>
         <StyledAboutPhrase>“God is in the details”</StyledAboutPhrase>
       </StyledAboutContainer>

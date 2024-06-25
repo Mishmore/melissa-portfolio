@@ -37,14 +37,18 @@ const Gallery = () => {
       ease: "none",
     });
 
-    ScrollTrigger.create({
-      trigger: carouselRef.current,
-      start: "bottom bottom",
-      end: () => `+=${getScrollAmount() * -1}`,
-      pin: carouselRef.current,
-      scrub: 1,
-      animation: tween,
-      invalidateOnRefresh: true,
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 1025px)", () => {
+      ScrollTrigger.create({
+        trigger: carouselRef.current,
+        start: "bottom bottom",
+        end: () => `+=${getScrollAmount() * -1}`,
+        pin: carouselRef.current,
+        scrub: 1,
+        animation: tween,
+        invalidateOnRefresh: true,
+      });
     });
 
     return () => {

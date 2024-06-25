@@ -19,6 +19,7 @@ const Contact = () => {
             <StyledContactText>+49 176 50285982</StyledContactText>
             <StyledContactText>melmore416@gmail.com</StyledContactText>
           </StyledFlex>
+          <span></span>
           <StyledFlex>
             <StyledContactLink
               href={socialMedia.behance}

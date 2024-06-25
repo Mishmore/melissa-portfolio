@@ -18,21 +18,28 @@ export const StyledProjectImage = styled.img`
 
 export const StyledProjectTitle = styled.p<{ id: string }>`
   color: ${(props) => props.theme.text};
-  font-size: 4vw;
+  font-size: 3.5vw;
   position: absolute;
   max-width: 20vw;
-  line-height: 1.2;
   cursor: pointer;
+
+  line-height: 1.1;
+  letter-spacing: -0.027em;
+  font-weight: 500;
 
   div::selection {
     background: ${(props) => props.theme.text};
     color: ${(props) => props.theme.defaultBg};
   }
+
+  @media (max-width: ${(props) => props.theme.desktop}) {
+    font-size: 2rem;
+  }
 `;
 
 export const StyledContainer = styled.div`
   background-color: ${(props) => props.theme.defaultBg};
-  height: 280vw;
+  height: 270vw;
 
   ${SytledProjectWrapper}:nth-child(1) {
     ${StyledProjectFigure} {

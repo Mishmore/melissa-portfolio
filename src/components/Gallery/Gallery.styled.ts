@@ -18,6 +18,14 @@ export const StyledGallery = styled.div`
   padding-bottom: ${galleryPadding};
   padding-left: ${galleryPadding};
   padding-right: ${galleryPadding};
+
+  @media (max-width: ${(props) => props.theme.desktop}) {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+    padding: 0;
+    min-height: calc(100vh - 5.3rem);
+  }
 `;
 
 export const StyledGalleryFigure = styled.figure`
