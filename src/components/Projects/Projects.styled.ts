@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/breakpoints";
 
 export const SytledProjectWrapper = styled.div``;
 
@@ -32,7 +33,7 @@ export const StyledProjectTitle = styled.p<{ id: string }>`
     color: ${(props) => props.theme.defaultBg};
   }
 
-  @media (max-width: ${(props) => props.theme.desktop}) {
+  @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 2rem;
   }
 `;

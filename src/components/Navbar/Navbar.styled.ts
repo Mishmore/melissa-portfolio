@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { breakpoints } from "../../styles/breakpoints";
 
 export const StyledNavbar = styled.nav`
   display: flex;
@@ -17,7 +18,7 @@ export const StyledNavbar = styled.nav`
   -webkit-backdrop-filter: blur(8px);
   color: ${(props) => props.theme.text};
 
-  @media (max-width: ${(props) => props.theme.desktop}) {
+  @media (max-width: ${breakpoints.laptop.small}) {
     padding: 1.4rem 1.8rem;
   }
 `;
@@ -34,7 +35,7 @@ export const StyledLogo = styled(NavLink)`
   font-weight: 500;
   text-transform: lowercase;
 
-  @media (max-width: ${(props) => props.theme.desktop}) {
+  @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 1.6rem;
   }
 `;
@@ -53,7 +54,7 @@ export const StyledNavlink = styled(NavLink)`
     color: ${(props) => props.theme.defaultBg};
   }
 
-  @media (max-width: ${(props) => props.theme.desktop}) {
+  @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 3rem;
   }
 `;

@@ -21,7 +21,7 @@ export const Navbar = () => {
   const { contextSafe } = useGSAP();
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
 
-  const isMobile = useMediaQuery("only screen and (max-width: 1024px)");
+  const isMobile = useMediaQuery("only screen and (max-width: 1023px)");
 
   const navOptions = [
     { path: PAHT_PROJECTS, title: "Projects" },

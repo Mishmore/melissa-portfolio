@@ -12,6 +12,7 @@ import {
   StyledGalleryWrapper,
 } from "../components/Gallery/Gallery.styled";
 import { Navbar } from "../components/Navbar/Navbar";
+import { breakpoints } from "../styles/breakpoints";
 
 const Gallery = () => {
   let { id } = useParams();
@@ -39,7 +40,7 @@ const Gallery = () => {
 
     let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 1025px)", () => {
+    mm.add(`(min-width: 1024px)`, () => {
       ScrollTrigger.create({
         trigger: carouselRef.current,
         start: "bottom bottom",

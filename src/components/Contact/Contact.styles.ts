@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/breakpoints";
 
 export const StyledContactWrapper = styled.div`
   background-color: ${(props) => props.theme.defaultBg};
   height: calc(100vh - 7rem);
   min-height: 70rem;
 
-  @media (max-width: ${(props) => props.theme.desktop}) {
+  @media (max-width: ${breakpoints.laptop.small}) {
     height: calc(100vh - 5.3rem);
     min-height: fit-content;
   }
@@ -20,7 +21,7 @@ export const StyledContactTextWrapper = styled.div`
   top: 50%;
   transform: translateY(-50%);
 
-  @media (max-width: ${(props) => props.theme.desktop}) {
+  @media (max-width: ${breakpoints.laptop.small}) {
     position: initial;
     transform: translateY(0);
     padding: 3rem;
@@ -40,7 +41,7 @@ export const StyledContactText = styled.p`
   letter-spacing: -0.027em;
   font-weight: 500;
 
-  @media (max-width: ${(props) => props.theme.desktop}) {
+  @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 3.2rem;
   }
 `;
@@ -51,7 +52,7 @@ export const StyledContactLink = styled.a`
   letter-spacing: -0.027em;
   font-weight: 500;
 
-  @media (max-width: ${(props) => props.theme.desktop}) {
+  @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 3.2rem;
   }
 `;

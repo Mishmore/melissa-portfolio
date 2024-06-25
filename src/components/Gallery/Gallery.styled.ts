@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/breakpoints";
 
 const galleryPadding = "3rem";
 const galleryGap = "6rem";
@@ -19,7 +20,7 @@ export const StyledGallery = styled.div`
   padding-left: ${galleryPadding};
   padding-right: ${galleryPadding};
 
-  @media (max-width: ${(props) => props.theme.desktop}) {
+  @media (max-width: ${breakpoints.laptop.small}) {
     flex-direction: column;
     height: auto;
     gap: 2rem;
