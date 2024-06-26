@@ -29,7 +29,7 @@ export const StyledContactTextWrapper = styled.div`
   @media (max-width: ${breakpoints.laptop.small}) {
     position: initial;
     transform: translateY(0);
-    padding: 3rem;
+    padding: 3rem 1.8rem;
     gap: 4rem;
     padding-top: 5rem;
   }

@@ -35,9 +35,10 @@ export const StyledLogo = styled(NavLink)`
   font-size: 2.2rem;
   font-weight: 500;
   text-transform: lowercase;
+  letter-spacing: -0.01em;
 
   @media (max-width: ${breakpoints.laptop.small}) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 `;
 
@@ -49,6 +50,7 @@ export const StyledNavlink = styled(NavLink)`
   text-align: center;
   font-weight: 500;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 
   &::selection {
     background: ${(props) => props.theme.text};
@@ -57,6 +59,7 @@ export const StyledNavlink = styled(NavLink)`
 
   @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 3rem;
+    letter-spacing: -0.025em;
   }
 `;
 

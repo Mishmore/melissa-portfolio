@@ -17,7 +17,7 @@ export const StyledAboutContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    padding: 3rem;
+    padding: 1.8rem;
     align-items: center;
   }
 `;
