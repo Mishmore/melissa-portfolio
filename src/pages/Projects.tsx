@@ -10,6 +10,7 @@ import {
   StyledContainer,
   SytledProjectWrapper,
   StyledProjectFigure,
+  SytledProjectsWrapper,
 } from "../components/Projects/Projects.styled";
 import { ProjectImage } from "../components/Projects/ProjectImage";
 
@@ -113,7 +114,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <>
+    <SytledProjectsWrapper>
       <Navbar />
       <StyledContainer>
         {projects.map((elm) => (
@@ -133,7 +134,7 @@ const Projects = () => {
           </SytledProjectWrapper>
         ))}
       </StyledContainer>
-    </>
+    </SytledProjectsWrapper>
   );
 };
 

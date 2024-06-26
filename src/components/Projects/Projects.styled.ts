@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
 
+export const SytledProjectsWrapper = styled.div`
+  background-color: ${(props) => props.theme.defaultBg};
+`;
+
 export const SytledProjectWrapper = styled.div`
   *::selection {
     background: ${(props) => props.theme.text};
@@ -55,6 +59,10 @@ export const StyledProjectTitle = styled.p`
 export const StyledContainer = styled.div`
   background-color: ${(props) => props.theme.defaultBg};
   height: 270vw;
+
+  @media (max-width: ${breakpoints.laptop.small}) {
+    height: auto;
+  }
 
   ${SytledProjectWrapper}:nth-child(1) {
     ${StyledProjectFigure} {
