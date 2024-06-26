@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { gsap, useGSAP } from "../../helpers/gsap";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
@@ -15,11 +16,12 @@ import {
   StyledNavbar,
   StyledNavlink,
 } from "./Navbar.styled";
-import { useState } from "react";
 
 export const Navbar = () => {
   const { contextSafe } = useGSAP();
   const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
+  const menuMobileRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const isMobile = useMediaQuery("only screen and (max-width: 1023px)");
 
@@ -46,6 +48,23 @@ export const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen((boolean) => !boolean);
   };
+
+  useGSAP(
+    () => {
+      if (menuMobileRef.current) {
+        gsap.to(menuMobileRef.current, {
+          autoAlpha: isMenuOpen ? 1 : 0,
+          duration: 0.6,
+          ease: "power2.out",
+        });
+
+        gsap.to(menuButtonRef.current, {
+          text: isMenuOpen ? "close" : "menu",
+        });
+      }
+    },
+    { dependencies: [isMenuOpen] }
+  );
 
   return (
     <>
@@ -75,11 +94,14 @@ export const Navbar = () => {
         )}
 
         {isMobile && (
-          <StyledMenuButton onClick={toggleMenu}>menu</StyledMenuButton>
+          <StyledMenuButton onClick={toggleMenu} ref={menuButtonRef}>
+            menu
+          </StyledMenuButton>
         )}
       </StyledNavbar>
-      {isMenuOpen && (
-        <StyledMenuMobile>
+
+      {isMobile && (
+        <StyledMenuMobile ref={menuMobileRef}>
           {navOptions.map((elm) => (
             <StyledNavlink key={elm.title} to={elm.path} id={elm.title}>
               {elm.title}

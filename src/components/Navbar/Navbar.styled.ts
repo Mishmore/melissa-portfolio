@@ -82,6 +82,6 @@ export const StyledMenuMobile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.8rem;
-  padding-top: 6rem;
+  gap: 2.4rem;
+  padding-top: 5rem;
 `;
