@@ -84,4 +84,6 @@ export const StyledMenuMobile = styled.div`
   align-items: flex-start;
   gap: 2.4rem;
   padding-top: 5rem;
+  opacity: 0;
+  visibility: hidden;
 `;
