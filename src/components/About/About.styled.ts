@@ -23,13 +23,13 @@ export const StyledAboutContainer = styled.div`
 `;
 
 export const StyledAboutText = styled.p`
-  font-size: 3.5vw;
+  font-size: clamp(5rem, 3.5vw, 10rem);
   position: absolute;
   top: 30vh;
   left: 41.6vw;
   max-width: 50vw;
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1;
   letter-spacing: -0.027em;
   mix-blend-mode: difference;
   filter: invert(1);

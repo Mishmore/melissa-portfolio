@@ -41,8 +41,8 @@ export const StyledFlex = styled.div`
 `;
 
 export const StyledContactText = styled.p`
-  font-size: 3.5vw;
-  line-height: 1.1;
+  font-size: clamp(5rem, 3.5vw, 10rem);
+  line-height: 1;
   letter-spacing: -0.027em;
   font-weight: 500;
 
@@ -52,8 +52,8 @@ export const StyledContactText = styled.p`
 `;
 
 export const StyledContactLink = styled.a`
-  font-size: 3.5vw;
-  line-height: 1.1;
+  font-size: clamp(5rem, 3.5vw, 10rem);
+  line-height: 1;
   letter-spacing: -0.027em;
   font-weight: 500;
 

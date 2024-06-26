@@ -25,12 +25,12 @@ export const StyledProjectImage = styled.img`
 
 export const StyledProjectTitle = styled.p`
   color: ${(props) => props.theme.text};
-  font-size: 3.5vw;
+  font-size: clamp(5rem, 3.5vw, 10rem);
   position: absolute;
   max-width: 20vw;
   cursor: pointer;
 
-  line-height: 1.1;
+  line-height: 1;
   letter-spacing: -0.027em;
   font-weight: 500;
 
