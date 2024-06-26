@@ -3,6 +3,7 @@ import { breakpoints } from "../../styles/breakpoints";
 
 export const SytledProjectsWrapper = styled.div`
   background-color: ${(props) => props.theme.defaultBg};
+  min-height: 100vh;
 `;
 
 export const SytledProjectWrapper = styled.div`
