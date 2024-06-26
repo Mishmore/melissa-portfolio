@@ -6,6 +6,10 @@ export const SytledProjectWrapper = styled.div`
     background: ${(props) => props.theme.text};
     color: ${(props) => props.theme.defaultBg};
   }
+
+  @media (max-width: ${breakpoints.laptop.small}) {
+    position: relative;
+  }
 `;
 
 export const StyledProjectFigure = styled.figure`
@@ -15,6 +19,11 @@ export const StyledProjectFigure = styled.figure`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: ${breakpoints.laptop.small}) {
+    width: 100vw !important;
+    position: initial;
   }
 `;
 
@@ -35,7 +44,11 @@ export const StyledProjectTitle = styled.p`
   font-weight: 500;
 
   @media (max-width: ${breakpoints.laptop.small}) {
-    font-size: 2rem;
+    font-size: 3.2rem;
+    top: 1.5em !important;
+    left: 3rem !important;
+    max-width: 40vw;
+    color: ${(props) => props.theme.defaultBg};
   }
 `;
 
@@ -106,5 +119,11 @@ export const StyledContainer = styled.div`
       top: 240vw;
       left: 53vw;
     }
+  }
+
+  @media (max-width: ${breakpoints.laptop.small}) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 `;
