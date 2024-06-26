@@ -36,7 +36,7 @@ export const projects: Project[] = [
     image_url: homeProjectsList[18] as string,
     description: "Orvay",
     css: {
-      width: "16.171vw",
+      width: "14.171vw",
       left: "99.248vw",
       top: "50vw",
     },
@@ -73,8 +73,8 @@ export const projects: Project[] = [
     description: "Buque",
     css: {
       width: "30vw",
-      right: "93.287vw",
-      top: "15vw",
+      right: "90vw",
+      top: "12vw",
     },
   },
   {
@@ -97,8 +97,8 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[25] as string,
-    description: "Perfect Storm",
+    image_url: homeProjectsList[4] as string,
+    description: "Café con Borges",
     css: {
       width: "11.285vw",
       left: "66vw",
@@ -106,8 +106,8 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[26] as string,
-    description: "Perfect Storm",
+    image_url: homeProjectsList[11] as string,
+    description: "Haums im Wald",
     css: {
       width: "5vw",
       right: "49.132vw",
@@ -119,8 +119,8 @@ export const projects: Project[] = [
     description: "Café con Borges",
     css: {
       width: "5.498vw",
-      right: "51.505vw",
-      top: "14vw",
+      right: "85.505vw",
+      top: "8vw",
     },
   },
   {
@@ -133,8 +133,8 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[4] as string,
-    description: "Café con Borges",
+    image_url: homeProjectsList[25] as string,
+    description: "Perfect Storm",
     css: {
       width: "12.269vw",
       left: "28.125vw",
@@ -226,8 +226,8 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[16] as string,
-    description: "Orvay",
+    image_url: homeProjectsList[12] as string,
+    description: "Haums im Wald",
     css: {
       width: "11.914vw",
       right: "31vw",
@@ -235,27 +235,27 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[11] as string,
-    description: "Haums im Wald",
+    image_url: homeProjectsList[26] as string,
+    description: "Perfect Storm",
     css: {
-      width: "9.491vw",
-      right: "38.819vw",
-      top: "97.644vw",
+      width: "7vw",
+      right: "51.819vw",
+      top: "100.644vw",
     },
   },
   {
     image_url: homeProjectsList[17] as string,
     description: "Orvay",
     css: {
-      width: "19.271vw",
+      width: "15vw",
       right: "88.831vw",
       top: "97.801vw",
     },
   },
 
   {
-    image_url: homeProjectsList[12] as string,
-    description: "Haums im Wald",
+    image_url: homeProjectsList[16] as string,
+    description: "Orvay",
     css: {
       width: "5.729vw",
       right: "85.127vw",
