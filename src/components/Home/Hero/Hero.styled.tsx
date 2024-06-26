@@ -14,8 +14,8 @@ export const StyledHeroWrapper = styled.div`
   position: fixed;
   left: 50%;
   top: 50%;
-  width: 3922px;
-  height: 2407px;
+  width: 218vw;
+  height: 127vw;
   transform: translate(-50%, -50%);
   z-index: 1;
   touch-action: none;
