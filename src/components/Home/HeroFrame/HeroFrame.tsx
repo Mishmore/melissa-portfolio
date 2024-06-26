@@ -14,7 +14,7 @@ interface HeroFrame {
   description: string;
   styles: {
     width: string | number;
-    height: string | number;
+    height?: string | number;
     top?: string | number;
     bottom?: string | number;
     left?: string | number;
