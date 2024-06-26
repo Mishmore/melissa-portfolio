@@ -9,6 +9,7 @@ import {
   StyledFlex,
 } from "../components/Contact/Contact.styles";
 import { Navbar } from "../components/Navbar/Navbar";
+import { UnderlineHover } from "../components/UnderlineHover/UnderlineHover";
 
 const Contact = () => {
   useGSAP(() => {
@@ -53,7 +54,7 @@ const Contact = () => {
               target="_blank"
               className="contact_text"
             >
-              Behance
+              <UnderlineHover>Behance</UnderlineHover>
             </StyledContactLink>
             <StyledContactLink
               href={socialMedia.instagram}
@@ -61,7 +62,7 @@ const Contact = () => {
               target="_blank"
               className="contact_text"
             >
-              Instagram
+              <UnderlineHover>Instagram</UnderlineHover>
             </StyledContactLink>
           </StyledFlex>
         </StyledContactTextWrapper>

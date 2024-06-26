@@ -43,7 +43,7 @@ export const StyledFlex = styled.div`
 export const StyledContactText = styled.p`
   font-size: clamp(5rem, 3.5vw, 10rem);
   line-height: 1;
-  letter-spacing: -0.027em;
+  letter-spacing: -0.025em;
   font-weight: 500;
 
   @media (max-width: ${breakpoints.laptop.small}) {
@@ -52,10 +52,11 @@ export const StyledContactText = styled.p`
 `;
 
 export const StyledContactLink = styled.a`
-  font-size: clamp(5rem, 3.5vw, 10rem);
+  font-size: clamp(5rem, 3.6vw, 10rem);
   line-height: 1;
-  letter-spacing: -0.027em;
+  letter-spacing: -0.025em;
   font-weight: 500;
+  width: min-content;
 
   @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 3.2rem;

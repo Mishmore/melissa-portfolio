@@ -31,7 +31,7 @@ export const StyledProjectTitle = styled.p`
   cursor: pointer;
 
   line-height: 1;
-  letter-spacing: -0.027em;
+  letter-spacing: -0.025em;
   font-weight: 500;
 
   @media (max-width: ${breakpoints.laptop.small}) {

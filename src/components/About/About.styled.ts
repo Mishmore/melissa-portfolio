@@ -30,7 +30,7 @@ export const StyledAboutText = styled.p`
   max-width: 50vw;
   font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.027em;
+  letter-spacing: -0.025em;
   mix-blend-mode: difference;
   filter: invert(1);
 
@@ -46,6 +46,8 @@ export const StyledAboutPhrase = styled.p`
   font-size: 2.8vw;
   left: 58.3vw;
   top: 70vh;
+  font-weight: 500;
+  letter-spacing: -0.025em;
 
   @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 2rem;

@@ -11,6 +11,7 @@ import {
 } from "../components/About/About.styled";
 import { Navbar } from "../components/Navbar/Navbar";
 import AboutImg from "../assets/about/melissa-hero.jpg";
+import { UnderlineHover } from "../components/UnderlineHover/UnderlineHover";
 
 const About = () => {
   const aboutTextRef = useRef<HTMLParagraphElement>(null);
@@ -91,7 +92,8 @@ const About = () => {
         </StyledAboutFigure>
         <StyledAboutText ref={aboutTextRef}>
           Hi, I am <span id="about_name">Melissa,</span> an interior designer
-          turned archviz artist that loves creating images.
+          turned <UnderlineHover>archviz</UnderlineHover> artist that loves
+          creating images.
         </StyledAboutText>
         <StyledAboutPhrase ref={aboutPhraseRef}>
           “God is in the details”
