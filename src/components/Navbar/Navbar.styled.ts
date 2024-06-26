@@ -60,6 +60,22 @@ export const StyledNavlink = styled(NavLink)`
   @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 3rem;
     letter-spacing: -0.025em;
+
+    &.active {
+      &::before {
+        content: "";
+        background-color: #000;
+        height: 0.09em;
+        left: 0;
+        position: absolute;
+        bottom: -0.1em;
+        width: 100%;
+        transform-origin: right;
+        transform: scaleX(1);
+        transition: transform 1s cubic-bezier(0.22, 0.61, 0.36, 1),
+          background-color 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+    }
   }
 `;
 
