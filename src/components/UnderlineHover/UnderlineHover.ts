@@ -16,6 +16,7 @@ export const UnderlineHover = styled.span`
     transition: transform 1s cubic-bezier(0.22, 0.61, 0.36, 1),
       background-color 1s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
+
   &:hover::before {
     transform: scaleX(1);
     transform-origin: left;

@@ -20,6 +20,7 @@ export const StyledNavbar = styled.nav`
 
   @media (max-width: ${breakpoints.laptop.small}) {
     padding: 1.4rem 1.8rem;
+    max-height: 5.3rem;
   }
 `;
 
@@ -36,7 +37,7 @@ export const StyledLogo = styled(NavLink)`
   text-transform: lowercase;
 
   @media (max-width: ${breakpoints.laptop.small}) {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 `;
 
@@ -64,6 +65,7 @@ export const StyledMenuButton = styled.button`
   background: none;
   padding: 0;
   font-weight: 500;
+  font-size: 1.8rem;
 `;
 
 export const StyledMenuMobile = styled.div`
