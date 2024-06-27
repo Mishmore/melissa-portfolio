@@ -17,7 +17,7 @@ export const SytledProjectWrapper = styled.div`
   }
 `;
 
-export const StyledProjectFigure = styled.figure`
+export const StyledProjectFigure = styled.picture`
   position: absolute;
   overflow: hidden;
   user-select: none;

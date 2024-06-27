@@ -57,7 +57,7 @@ export const StyledAboutPhrase = styled.p`
   }
 `;
 
-export const StyledAboutFigure = styled.figure`
+export const StyledAboutFigure = styled.picture`
   height: calc(100vh - 12rem);
   width: 50vw;
   position: relative;

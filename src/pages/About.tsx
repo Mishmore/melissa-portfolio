@@ -11,6 +11,7 @@ import {
 } from "../components/About/About.styled";
 import { Navbar } from "../components/Navbar/Navbar";
 import AboutImg from "../assets/about/melissa-hero.jpg";
+import AboutImgWebp from "../assets/about/melissa-hero.webp";
 import { UnderlineHover } from "../components/UnderlineHover/UnderlineHover";
 
 const About = () => {
@@ -84,6 +85,8 @@ const About = () => {
       <Navbar />
       <StyledAboutContainer>
         <StyledAboutFigure>
+          <source srcSet={AboutImgWebp} type="image/webp" />
+          <source srcSet={AboutImg} type="image/jpeg" />
           <StyledAboutImg
             ref={aboutImgRef}
             src={AboutImg}
