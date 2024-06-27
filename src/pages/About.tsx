@@ -99,7 +99,8 @@ const About = () => {
           creating images.
         </StyledAboutText>
         <StyledAboutPhrase ref={aboutPhraseRef}>
-          “God is in the details”
+          “God is in the details” <br />
+          <span>(my motto)</span>
         </StyledAboutPhrase>
       </StyledAboutContainer>
     </>

@@ -48,12 +48,16 @@ export const StyledAboutPhrase = styled.p`
   top: 70vh;
   font-weight: 500;
   letter-spacing: -0.025em;
+  line-height: 1;
+
+  span {
+    font-size: 0.8em;
+  }
 
   @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 2rem;
     position: initial;
     align-self: flex-end;
-    padding-top: 3rem;
   }
 `;
 

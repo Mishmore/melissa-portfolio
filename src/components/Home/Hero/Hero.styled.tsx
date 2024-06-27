@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { breakpoints } from "../../../styles/breakpoints";
 
 export const StyledHero = styled.div`
   position: absolute;
@@ -20,4 +21,9 @@ export const StyledHeroWrapper = styled.div`
   z-index: 1;
   touch-action: none;
   transition: transform 500ms cubic-bezier(0.34, 0.56, 0.64, 1);
+
+  @media (max-width: ${breakpoints.laptop.small}) {
+    width: 150vw;
+    height: 150vh;
+  }
 `;

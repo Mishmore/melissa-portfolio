@@ -34,7 +34,7 @@ const projects = [
   },
   {
     image: Buque,
-    title: "Buque",
+    title: "El Buque",
     id: "buque",
   },
   {

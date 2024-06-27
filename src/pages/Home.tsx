@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useMediaQuery } from "@uidotdev/usehooks";
 import { gsap, useGSAP, Draggable } from "../helpers/gsap";
 
 import {
@@ -6,13 +7,15 @@ import {
   StyledHeroWrapper,
 } from "../components/Home/Hero/Hero.styled";
 import { HeroFrame } from "../components/Home/HeroFrame/HeroFrame";
-
-import { projects } from "../constants/homeProjects";
 import { Navbar } from "../components/Navbar/Navbar";
+
+import { desktopProjects } from "../constants/homeProjects";
+import { mobileProjects } from "../constants/homeProjects";
 
 const Home = () => {
   const main = useRef<HTMLDivElement>(null);
   const { contextSafe } = useGSAP();
+  const isMobile = useMediaQuery("only screen and (max-width: 1023px)");
 
   function getDirection(direction: string) {
     const position = { x: "0", y: "0" };
@@ -94,7 +97,7 @@ const Home = () => {
       <Navbar />
       <StyledHero>
         <StyledHeroWrapper className="hero_wrapper">
-          {projects.map((elm, index) => (
+          {(isMobile ? mobileProjects : desktopProjects).map((elm, index) => (
             <HeroFrame
               key={elm.description + index}
               imageUrl={elm.image_url}

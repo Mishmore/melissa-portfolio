@@ -11,7 +11,118 @@ interface Project {
   };
 }
 
-export const projects: Project[] = [
+export const mobileProjects: Project[] = [
+  {
+    image_url: "/home-mobile/cafe_con_borges_2",
+    description: "",
+    css: {
+      width: "52.267vw",
+      left: "50vw",
+      top: "55vh",
+    },
+  },
+  {
+    image_url: "/home-mobile/cafe_con_borges_6",
+    description: "",
+    css: {
+      width: "36.533vw",
+      left: "30vw",
+      top: "8vh",
+    },
+  },
+  {
+    image_url: "/home-mobile/perfect_storm_3",
+    description: "",
+    css: {
+      width: "51.2vw",
+      right: "20vw",
+      top: "30vw",
+    },
+  },
+  {
+    image_url: "/home-mobile/perfect_storm_4",
+    description: "",
+    css: {
+      width: "17.333vw",
+      right: "35vw",
+      top: "43vh",
+    },
+  },
+  {
+    image_url: "/home-mobile/cafe_con_borges_3",
+    description: "",
+    css: {
+      width: "29vw",
+      left: "10vw",
+      top: "24vh",
+    },
+  },
+  {
+    image_url: "/home-mobile/cafe_con_borges_1",
+    description: "",
+    css: {
+      width: "14.4vw",
+      left: "28vw",
+      top: "60vh",
+    },
+  },
+  {
+    image_url: "/home-mobile/haums_im_wald_1",
+    description: "",
+    css: {
+      width: "30vw",
+      left: "0vw",
+      top: "80vh",
+    },
+  },
+  {
+    image_url: "/home-mobile/buque_1",
+    description: "",
+    css: {
+      width: "30.133vw",
+      left: "40vw",
+      top: "100vh",
+    },
+  },
+  {
+    image_url: "/home-mobile/perfect_storm_5",
+    description: "",
+    css: {
+      width: "16vw",
+      right: "20vw",
+      top: "85vh",
+    },
+  },
+  {
+    image_url: "/home-mobile/orvay_5",
+    description: "",
+    css: {
+      width: "46.933vw",
+      left: "10vw",
+      top: "120vh",
+    },
+  },
+  {
+    image_url: "/home-mobile/cafe_con_borges_5",
+    description: "",
+    css: {
+      width: "25.6vw",
+      right: "30vw",
+      top: "130vh",
+    },
+  },
+  {
+    image_url: "/home-mobile/haums_im_wald_4",
+    description: "",
+    css: {
+      width: "37.333vw",
+      right: "5vw",
+      top: "110vh",
+    },
+  },
+];
+
+export const desktopProjects: Project[] = [
   {
     image_url: "/home-projects/perfect_storm_1",
     description: "Perfect Storm",
