@@ -161,7 +161,7 @@ export const desktopProjects: Project[] = [
   },
   {
     image_url: "/home-projects/buque_1",
-    description: "Buque",
+    description: "El Buque",
     css: {
       width: "14vw",
       right: "79vw",
@@ -179,7 +179,7 @@ export const desktopProjects: Project[] = [
   },
   {
     image_url: "/home-projects/buque_2",
-    description: "Buque",
+    description: "El Buque",
     css: {
       width: "30vw",
       right: "90vw",
