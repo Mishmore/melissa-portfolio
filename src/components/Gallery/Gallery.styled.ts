@@ -30,7 +30,7 @@ export const StyledGallery = styled.div`
   }
 `;
 
-export const StyledGalleryFigure = styled.figure`
+export const StyledGalleryFigure = styled.picture`
   height: 100%;
   width: auto;
   display: flex;

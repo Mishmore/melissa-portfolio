@@ -73,6 +73,8 @@ const Gallery = () => {
         {id &&
           gallery[id].map((elm: string) => (
             <StyledGalleryFigure key={elm}>
+              <source srcSet={elm} type="image/webp" />
+              <source srcSet={elm} type="image/jpeg" />
               <StyledGalleryImg src={elm} className="gallery-img" />
             </StyledGalleryFigure>
           ))}
