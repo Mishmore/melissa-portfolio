@@ -1,5 +1,3 @@
-import { homeProjectsList } from "../helpers/homeProjectsList";
-
 interface Project {
   image_url: string;
   description: string;
