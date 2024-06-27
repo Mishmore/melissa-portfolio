@@ -15,7 +15,7 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    image_url: homeProjectsList[20] as string,
+    image_url: "/home-projects/perfect_storm_1",
     description: "Perfect Storm",
     css: {
       width: "14.12vw",
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[8] as string,
+    image_url: "/home-projects/cafe_con_borges_7",
     description: "Café con Borges",
     css: {
       width: "15.046vw",
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[18] as string,
+    image_url: "/home-projects/orvay_5",
     description: "Orvay",
     css: {
       width: "14.171vw",
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[22] as string,
+    image_url: "/home-projects/perfect_storm_3",
     description: "Perfect Storm",
     css: {
       width: "15.162vw",
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[0] as string,
+    image_url: "/home-projects/buque_1",
     description: "Buque",
     css: {
       width: "14vw",
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[23] as string,
+    image_url: "/home-projects/perfect_storm_4",
     description: "Perfect Storm",
     css: {
       width: "6.597vw",
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[1] as string,
+    image_url: "/home-projects/buque_2",
     description: "Buque",
     css: {
       width: "30vw",
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[21] as string,
+    image_url: "/home-projects/perfect_storm_2",
     description: "Perfect Storm",
     css: {
       width: "8.507vw",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
   },
 
   {
-    image_url: homeProjectsList[15] as string,
+    image_url: "/home-projects/orvay_2",
     description: "Haums im Wald",
     css: {
       width: "6.076vw",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[4] as string,
+    image_url: "/home-projects/cafe_con_borges_3",
     description: "Café con Borges",
     css: {
       width: "11.285vw",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[11] as string,
+    image_url: "/home-projects/haums_im_wald_2",
     description: "Haums im Wald",
     css: {
       width: "5vw",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[2] as string,
+    image_url: "/home-projects/cafe_con_borges_1",
     description: "Café con Borges",
     css: {
       width: "5.498vw",
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[3] as string,
+    image_url: "/home-projects/cafe_con_borges_2",
     description: "Café con Borges",
     css: {
       width: "21vw",
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[25] as string,
+    image_url: "/home-projects/perfect_storm_6",
     description: "Perfect Storm",
     css: {
       width: "12.269vw",
@@ -142,7 +142,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[5] as string,
+    image_url: "/home-projects/cafe_con_borges_4",
     description: "Café con Borges",
     css: {
       width: "20vw",
@@ -151,7 +151,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[6] as string,
+    image_url: "/home-projects/cafe_con_borges_5",
     description: "Café con Borges",
     css: {
       width: "10.648vw",
@@ -160,7 +160,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[7] as string,
+    image_url: "/home-projects/cafe_con_borges_6",
     description: "Café con Borges",
     css: {
       width: "14vw",
@@ -170,7 +170,7 @@ export const projects: Project[] = [
   },
 
   {
-    image_url: homeProjectsList[14] as string,
+    image_url: "/home-projects/orvay_1",
     description: "Orvay",
     css: {
       width: "15vw",
@@ -179,7 +179,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[10] as string,
+    image_url: "/home-projects/haums_im_wald_1",
     description: "Haums im Wald",
     css: {
       width: "16.435vw",
@@ -188,7 +188,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[9] as string,
+    image_url: "/home-projects/cafe_con_borges_8",
     description: "Café con Borges",
     css: {
       width: "33vw",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[19] as string,
+    image_url: "/home-projects/orvay_6",
     description: "Orvay",
     css: {
       width: "5.15vw",
@@ -207,7 +207,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[13] as string,
+    image_url: "/home-projects/haums_im_wald_4",
     description: "Haums im Wald",
     css: {
       width: "16vw",
@@ -217,7 +217,7 @@ export const projects: Project[] = [
   },
   // Orvay
   {
-    image_url: homeProjectsList[24] as string,
+    image_url: "/home-projects/perfect_storm_5",
     description: "Perfect Storm",
     css: {
       width: "31vw",
@@ -226,7 +226,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[12] as string,
+    image_url: "/home-projects/haums_im_wald_3",
     description: "Haums im Wald",
     css: {
       width: "11.914vw",
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[26] as string,
+    image_url: "/home-projects/perfect_storm_7",
     description: "Perfect Storm",
     css: {
       width: "7vw",
@@ -244,7 +244,7 @@ export const projects: Project[] = [
     },
   },
   {
-    image_url: homeProjectsList[17] as string,
+    image_url: "/home-projects/orvay_4",
     description: "Orvay",
     css: {
       width: "15vw",
@@ -254,7 +254,7 @@ export const projects: Project[] = [
   },
 
   {
-    image_url: homeProjectsList[16] as string,
+    image_url: "/home-projects/orvay_3",
     description: "Orvay",
     css: {
       width: "5.729vw",

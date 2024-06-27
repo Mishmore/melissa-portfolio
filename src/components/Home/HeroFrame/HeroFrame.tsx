@@ -66,7 +66,9 @@ export const HeroFrame = ({ imageUrl, styles, description }: HeroFrame) => {
     >
       <StyledHeroFrame className="hero_frame" style={styles}>
         <StyledFigure>
-          <StyledImg src={imageUrl} />
+          <source srcSet={`${imageUrl}.webp`} type="image/webp" />
+          <source srcSet={`${imageUrl}.jpg`} type="image/jpeg" />
+          <StyledImg src={`${imageUrl}.jpg`} />
         </StyledFigure>
       </StyledHeroFrame>
       <StyledDescription className="hero_description">

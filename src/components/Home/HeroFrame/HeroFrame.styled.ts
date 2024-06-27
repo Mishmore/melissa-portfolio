@@ -9,7 +9,7 @@ export const StyledHeroFrame = styled.div`
   mix-blend-mode: multiply;
 `;
 
-export const StyledFigure = styled.figure`
+export const StyledFigure = styled.picture`
   position: relative;
   overflow: hidden;
 `;
