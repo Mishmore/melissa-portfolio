@@ -25,4 +25,7 @@ export const StyledDescription = styled.figcaption`
   font-size: 1.6rem;
   max-width: 50%;
   position: absolute;
+  text-align: center;
+  line-height: 1.2;
+  font-weight: 500;
 `;

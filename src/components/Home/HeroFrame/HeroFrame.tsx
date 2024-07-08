@@ -29,6 +29,8 @@ export const HeroFrame = ({ imageUrl, styles, description }: HeroFrame) => {
 
   const { contextSafe } = useGSAP(
     () => {
+      gsap.set(".hero_description", { xPercent: -50, yPercent: -180 });
+
       xTo.current = gsap.quickTo(".hero_description", "x", {
         duration: 0.8,
         ease: "power3",
