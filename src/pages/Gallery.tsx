@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
-import { gsap, useGSAP, ScrollTrigger } from "../helpers/gsap";
+import { gsap, useGSAP, ScrollTrigger, Draggable } from "../helpers/gsap";
 import { useLenis } from "lenis/react";
 
 import { gallery } from "../constants/gallery";
@@ -44,7 +44,10 @@ const Gallery = () => {
     let mm = gsap.matchMedia();
 
     mm.add(`(min-width: 1024px)`, () => {
-      ScrollTrigger.create({
+      let clamper: (value: number) => number;
+      let dragRatio: number;
+
+      const horizontalScroll = ScrollTrigger.create({
         trigger: carouselRef.current,
         start: "bottom bottom",
         end: () => `+=${getScrollAmount() * -1}`,
@@ -53,6 +56,32 @@ const Gallery = () => {
         animation: tween,
         invalidateOnRefresh: true,
       });
+
+      ScrollTrigger.addEventListener("refresh", () => {
+        clamper = gsap.utils.clamp(
+          horizontalScroll.start + 1,
+          horizontalScroll.end - 1
+        );
+
+        if (carouselRef?.current) {
+          dragRatio = carouselRef.current.offsetWidth / window.innerWidth;
+        }
+      });
+
+      Draggable.create(".proxy", {
+        type: "x",
+        trigger: carouselRef.current,
+        allowContextMenu: true,
+        onPress() {
+          clamper || ScrollTrigger.refresh();
+          this.startScroll = horizontalScroll.scroll();
+        },
+        onDrag() {
+          horizontalScroll.scroll(
+            clamper(this.startScroll - (this.x - this.startX) * dragRatio)
+          );
+        },
+      })[0];
     });
 
     return () => {
@@ -83,6 +112,8 @@ const Gallery = () => {
             </StyledGalleryFigure>
           ))}
       </StyledGallery>
+
+      <div className="proxy"></div>
     </StyledGalleryWrapper>
   );
 };
