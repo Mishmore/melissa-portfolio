@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeroFrameWrapper = styled.div`
-  position: relative;
+  position: absolute;
 `;
 
 export const StyledHeroFrame = styled.div`
@@ -20,10 +20,9 @@ export const StyledImg = styled.img`
 
 export const StyledDescription = styled.figcaption`
   opacity: 0;
-  color: ${(props) => props.theme.beige};
-  padding: 1rem 0.8rem;
+  color: ${(props) => props.theme.defaultBg};
+  text-align: left;
+  font-size: 1.6rem;
+  max-width: 50%;
   position: absolute;
-  text-align: center;
-  transform: translateX(-50%);
-  font-size: 1.4rem;
 `;

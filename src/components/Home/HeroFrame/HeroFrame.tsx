@@ -23,22 +23,34 @@ interface HeroFrame {
 }
 
 export const HeroFrame = ({ imageUrl, styles, description }: HeroFrame) => {
-  const heroRef = useRef(null);
-  const { contextSafe } = useGSAP({ scope: heroRef });
+  const heroRef = useRef<HTMLDivElement>(null);
+  const xTo = useRef<any>();
+  const yTo = useRef<any>();
+
+  const { contextSafe } = useGSAP(
+    () => {
+      xTo.current = gsap.quickTo(".hero_description", "x", {
+        duration: 0.8,
+        ease: "power3",
+      });
+
+      yTo.current = gsap.quickTo(".hero_description", "y", {
+        duration: 0.8,
+        ease: "power3",
+      });
+    },
+    { scope: heroRef }
+  );
 
   const onMouseMove: MouseEventHandler = contextSafe((e) => {
-    const heroWrapper = document
-      .querySelector(".hero_wrapper")!
-      .getBoundingClientRect();
-    const x = e.clientX - heroWrapper.left;
-    const y = e.clientY - heroWrapper.top - 60; // Position description 60px above the cursor
+    if (heroRef.current) {
+      const { left, top } = heroRef.current.getBoundingClientRect();
+      const x = e.clientX - left;
+      const y = e.clientY - top;
 
-    gsap.to(".hero_description", {
-      x: x,
-      y: y,
-      duration: 1,
-      ease: "expoScale(0.5,7,none)",
-    });
+      xTo.current(x);
+      yTo.current(y);
+    }
   });
 
   const onMouseEnter = contextSafe(() => {
@@ -61,10 +73,11 @@ export const HeroFrame = ({ imageUrl, styles, description }: HeroFrame) => {
     <StyledHeroFrameWrapper
       ref={heroRef}
       onMouseMove={onMouseMove}
+      style={styles}
       onMouseOver={onMouseEnter}
       onMouseOut={onMouseLeave}
     >
-      <StyledHeroFrame className="hero_frame" style={styles}>
+      <StyledHeroFrame className="hero_frame">
         <StyledFigure>
           <source srcSet={`${imageUrl}.webp`} type="image/webp" />
           <source srcSet={`${imageUrl}.jpg`} type="image/jpeg" />

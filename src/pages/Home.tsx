@@ -87,7 +87,7 @@ const Home = () => {
 
   useGSAP(() => {
     gsap.from(".hero_frame", {
-      duration: 1.8,
+      duration: 1.5,
       scale: 2,
       ease: "power1.out",
       onComplete: drag,
