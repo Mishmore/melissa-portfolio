@@ -10,8 +10,12 @@ import {
 } from "../components/Contact/Contact.styles";
 import { Navbar } from "../components/Navbar/Navbar";
 import { UnderlineHover } from "../components/UnderlineHover/UnderlineHover";
+import { PAHT_CONTACT } from "../constants/routes";
+import { useGAPage } from "../analytics/hooks/useGA";
 
 const Contact = () => {
+  useGAPage({ page: PAHT_CONTACT, title: "Contact" });
+
   useGSAP(() => {
     const tl = gsap.timeline();
 

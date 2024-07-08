@@ -13,11 +13,15 @@ import { Navbar } from "../components/Navbar/Navbar";
 import AboutImg from "../assets/about/melissa-hero.jpg";
 import AboutImgWebp from "../assets/about/melissa-hero.webp";
 import { UnderlineHover } from "../components/UnderlineHover/UnderlineHover";
+import { PAHT_ABOUT } from "../constants/routes";
+import { useGAPage } from "../analytics/hooks/useGA";
 
 const About = () => {
   const aboutTextRef = useRef<HTMLParagraphElement>(null);
   const aboutPhraseRef = useRef<HTMLParagraphElement>(null);
   const aboutImgRef = useRef<HTMLImageElement>(null);
+
+  useGAPage({ page: PAHT_ABOUT, title: "About" });
 
   useGSAP(() => {
     const tl = gsap.timeline();

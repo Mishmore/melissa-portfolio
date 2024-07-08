@@ -11,6 +11,8 @@ import { Navbar } from "../components/Navbar/Navbar";
 
 import { desktopProjects } from "../constants/homeProjects";
 import { mobileProjects } from "../constants/homeProjects";
+import { PAHT_HOME } from "../constants/routes";
+import { useGAPage } from "../analytics/hooks/useGA";
 
 const Home = () => {
   const main = useRef<HTMLDivElement>(null);
@@ -80,6 +82,8 @@ const Home = () => {
       },
     });
   });
+
+  useGAPage({ page: PAHT_HOME, title: "Home" });
 
   useGSAP(() => {
     gsap.from(".hero_frame", {

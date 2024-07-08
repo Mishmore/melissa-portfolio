@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import ReactGA from "react-ga4";
 
 import theme from "./styles/theme.ts";
 import Home from "./pages/Home.tsx";
@@ -43,10 +44,16 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <ThemeProvider theme={theme}>
-    <SmoothScrollWrapper>
-      <RouterProvider router={router} />
-    </SmoothScrollWrapper>
-  </ThemeProvider>
-);
+const App = () => {
+  ReactGA.initialize(import.meta.env.VITE_GA);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <SmoothScrollWrapper>
+        <RouterProvider router={router} />
+      </SmoothScrollWrapper>
+    </ThemeProvider>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById("root")!).render(<App />);

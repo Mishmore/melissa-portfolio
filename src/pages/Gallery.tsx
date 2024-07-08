@@ -12,11 +12,15 @@ import {
   StyledGalleryWrapper,
 } from "../components/Gallery/Gallery.styled";
 import { Navbar } from "../components/Navbar/Navbar";
+import { PAHT_PROJECTS_DETAIL } from "../constants/routes";
+import { useGAPage } from "../analytics/hooks/useGA";
 
 const Gallery = () => {
   let { id } = useParams();
   const carouselRef = useRef<HTMLDivElement>(null);
   const lenis = useLenis(ScrollTrigger.update);
+
+  useGAPage({ page: PAHT_PROJECTS_DETAIL, title: "Projects detail" });
 
   useGSAP(() => {
     const getScrollAmount = (): number => {

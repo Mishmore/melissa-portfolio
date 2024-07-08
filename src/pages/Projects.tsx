@@ -20,6 +20,8 @@ import HaumsInWald from "../assets/projects-page/haums_im_wald_1.jpg";
 import Orvay from "../assets/projects-page/orvay_5.jpg";
 import PerfectStorm from "../assets/projects-page/perfect_storm_1.jpg";
 import { useMediaQuery } from "@uidotdev/usehooks";
+import { PAHT_PROJECTS } from "../constants/routes";
+import { useGAPage } from "../analytics/hooks/useGA";
 
 const projects = [
   {
@@ -53,6 +55,8 @@ const Projects = () => {
   const navigate = useNavigate();
   const lenis = useLenis(ScrollTrigger.update);
   const isMobile = useMediaQuery("only screen and (max-width: 1023px)");
+
+  useGAPage({ page: PAHT_PROJECTS, title: "Projects" });
 
   useGSAP(() => {
     // Title fade animation
