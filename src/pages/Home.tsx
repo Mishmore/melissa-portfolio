@@ -68,16 +68,18 @@ const Home = () => {
         gsap.to(".hero_frame", {
           duration: 1,
           ease: "power1.out",
-          x: `+=${
-            getDirection(direction).x != "0"
-              ? `${getDirection(direction).x}random([10,15,20,25])`
-              : 0
-          }`,
-          y: `+=${
-            getDirection(direction).y != "0"
-              ? `${getDirection(direction).y}random([10,15,20,25])`
-              : 0
-          }`,
+          x: () =>
+            `+=${
+              getDirection(direction).x != "0"
+                ? `${getDirection(direction).x}random([10,15,20,25])`
+                : 0
+            }`,
+          y: () =>
+            `+=${
+              getDirection(direction).y != "0"
+                ? `${getDirection(direction).y}random([10,15,20,25])`
+                : 0
+            }`,
         });
       },
     });
