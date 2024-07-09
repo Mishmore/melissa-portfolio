@@ -40,13 +40,15 @@ const Contact = () => {
       <Navbar />
       <StyledContactWrapper>
         <StyledContactTextWrapper>
-          <StyledContactText className="contact_text">
-            Let’s work together!
-          </StyledContactText>
           <StyledFlex>
             <StyledContactText className="contact_text">
-              +49 176 50285982
+              Let’s work together!
             </StyledContactText>
+            <StyledContactText className="contact_text">
+              Get in touch
+            </StyledContactText>
+          </StyledFlex>
+          <StyledFlex>
             <StyledContactText className="contact_text">
               melmore416@gmail.com
             </StyledContactText>
