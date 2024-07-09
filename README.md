@@ -19,3 +19,7 @@ Archviz Portfolio is a custom portfolio application designed and developed for M
 - Vite: For fast development and build process.
 - Google Analytics: For tracking user interactions and traffic.
 - Lenis: For smooth scrolling effects.
+
+## Authors
+
+- [@mishmore](https://www.github.com/Mishmore)
