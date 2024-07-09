@@ -17,24 +17,6 @@ export const StyledContactWrapper = styled.div`
   }
 `;
 
-export const StyledContactTextWrapper = styled.div`
-  position: relative;
-  padding-left: 12rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3.5vw;
-  top: 50%;
-  transform: translateY(-50%);
-
-  @media (max-width: ${breakpoints.laptop.small}) {
-    position: initial;
-    transform: translateY(0);
-    padding: 3rem 1.8rem;
-    gap: 4rem;
-    padding-top: 5rem;
-  }
-`;
-
 export const StyledFlex = styled.div`
   display: flex;
   flex-direction: column;
@@ -60,5 +42,37 @@ export const StyledContactLink = styled.a`
 
   @media (max-width: ${breakpoints.laptop.small}) {
     font-size: 3.2rem;
+  }
+`;
+
+export const StyledContactTextWrapper = styled.div`
+  position: relative;
+  padding-left: 12rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5vw;
+  top: 50%;
+  transform: translateY(-50%);
+
+  ${StyledContactText}:nth-child(2) {
+    width: max-content;
+    &::before {
+      content: "";
+      background-color: #000;
+      height: 0.09em;
+      left: 0;
+      position: absolute;
+      bottom: -0.1em;
+      width: 100%;
+      transform-origin: right;
+    }
+  }
+
+  @media (max-width: ${breakpoints.laptop.small}) {
+    position: initial;
+    transform: translateY(0);
+    padding: 3rem 1.8rem;
+    gap: 4rem;
+    padding-top: 5rem;
   }
 `;
